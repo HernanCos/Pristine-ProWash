@@ -1,0 +1,107 @@
+"use client"
+
+import type React from "react"
+
+import { useState } from "react"
+import Image from "next/image"
+import Link from "next/link"
+import { ChevronRight } from "lucide-react"
+
+type BeforeAfterSliderProps = {
+  beforeImage: string
+  afterImage: string
+  alt: string
+}
+
+function BeforeAfterSlider({ beforeImage, afterImage, alt }: BeforeAfterSliderProps) {
+  const [sliderPosition, setSliderPosition] = useState(50)
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect()
+    const x = Math.max(0, Math.min(e.clientX - rect.left, rect.width))
+    const percent = Math.max(0, Math.min((x / rect.width) * 100, 100))
+    setSliderPosition(percent)
+  }
+
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect()
+    const x = Math.max(0, Math.min(e.touches[0].clientX - rect.left, rect.width))
+    const percent = Math.max(0, Math.min((x / rect.width) * 100, 100))
+    setSliderPosition(percent)
+  }
+
+  return (
+    <div
+      className="relative w-full h-[300px] md:h-[400px] overflow-hidden rounded-lg cursor-grab"
+      onMouseMove={handleMouseMove}
+      onTouchMove={handleTouchMove}
+    >
+      <div className="absolute inset-0 z-10">
+        <Image src={afterImage || "/placeholder.svg"} alt={`After: ${alt}`} fill className="object-cover" />
+      </div>
+
+      <div className="absolute inset-0 z-20 overflow-hidden" style={{ width: `${sliderPosition}%` }}>
+        <Image src={beforeImage || "/placeholder.svg"} alt={`Before: ${alt}`} fill className="object-cover" />
+      </div>
+
+      <div
+        className="absolute top-0 bottom-0 w-1 bg-white z-30 cursor-col-resize"
+        style={{ left: `${sliderPosition}%`, transform: "translateX(-50%)" }}
+      >
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-white rounded-full flex items-center justify-center">
+          <div className="w-4 h-4 bg-cyan rounded-full"></div>
+        </div>
+      </div>
+
+      <div className="absolute top-4 left-4 bg-charcoal bg-opacity-75 text-white px-3 py-1 rounded-md z-40">Before</div>
+
+      <div className="absolute top-4 right-4 bg-charcoal bg-opacity-75 text-white px-3 py-1 rounded-md z-40">After</div>
+    </div>
+  )
+}
+
+export default function Gallery() {
+  return (
+    <section id="gallery" className="section-padding">
+      <div className="container">
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">Before & After Gallery</h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="space-y-3">
+            <BeforeAfterSlider
+              beforeImage="/images/roof-before.png"
+              afterImage="/images/roof-after.png"
+              alt="Roof soft washing before and after showing moss and algae removal"
+            />
+            <p className="text-center text-gray-300">Roof Soft Washing</p>
+          </div>
+
+          <div className="space-y-3">
+            <BeforeAfterSlider
+              beforeImage="/images/gutter-before.png"
+              afterImage="/images/gutter-after.png"
+              alt="Gutter cleaning before and after showing debris removal and brightening"
+            />
+            <p className="text-center text-gray-300">Gutter Cleaning & Brightening</p>
+          </div>
+
+          <div className="space-y-3">
+            <BeforeAfterSlider
+              beforeImage="/images/driveway-before.png"
+              afterImage="/images/driveway-after.jpg"
+              alt="Driveway cleaning before and after showing oil stain removal"
+            />
+            <p className="text-center text-gray-300">Driveway & Concrete Cleaning</p>
+          </div>
+        </div>
+
+        <div className="mt-10 text-center">
+          <Link href="/portfolio" className="btn-primary inline-flex items-center gap-2">
+            <span>View Full Portfolio</span>
+            <ChevronRight size={18} />
+          </Link>
+        </div>
+      </div>
+    </section>
+  )
+}
