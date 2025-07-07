@@ -5,11 +5,14 @@ import type React from "react"
 import { useState } from "react"
 import { Mail, Phone, MapPin } from "lucide-react"
 import Image from "next/image"
+import { useRouter } from "next/navigation"
 
 export default function Contact() {
+  const router = useRouter()
   const [formState, setFormState] = useState<"idle" | "submitting" | "success" | "error">("idle")
   const [formData, setFormData] = useState({
     name: "",
+    email: "",
     phone: "",
     address: "",
     service: "",
@@ -21,8 +24,7 @@ export default function Contact() {
     setFormState("submitting")
 
     try {
-      // Simulate form submission - replace with actual endpoint
-      const response = await fetch("https://formspree.io/f/yourFormID", {
+      const response = await fetch("/api/quote", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -34,8 +36,7 @@ export default function Contact() {
       })
 
       if (response.ok) {
-        setFormState("success")
-        setFormData({ name: "", phone: "", address: "", service: "", message: "" })
+        router.push("/thankyou")
       } else {
         setFormState("error")
       }
@@ -75,14 +76,7 @@ export default function Contact() {
                 - Replace 'yourFormID' below with actual Formspree form ID
                 - Verify recipient address = info@pristineprowash.net
               */}
-              <form
-                onSubmit={handleSubmit}
-                className="space-y-4"
-                method="POST"
-                data-name="Quote Request Form"
-                id="quote-form"
-                name="wf-form-Quote-Request-Form"
-              >
+              <form onSubmit={handleSubmit} className="space-y-4" method="POST">
                 <input type="hidden" name="_subject" value="New Quote Request from PristineProWash" />
 
                 <div>
@@ -97,6 +91,23 @@ export default function Contact() {
                     onChange={handleInputChange}
                     className="w-full p-3 bg-gray-700 rounded-md"
                     placeholder="Your name"
+                    required
+                    disabled={formState === "submitting"}
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="email" className="block mb-2 text-sm font-medium">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className="w-full p-3 bg-gray-700 rounded-md"
+                    placeholder="your@email.com"
                     required
                     disabled={formState === "submitting"}
                   />
@@ -220,16 +231,6 @@ export default function Contact() {
                   {formState === "submitting" ? "Submitting..." : "Submit Quote Request"}
                 </button>
               </form>
-
-              {/* Success Message */}
-              {formState === "success" && (
-                <div
-                  className="mt-4 p-6 bg-green-900 text-white rounded-lg text-center"
-                  style={{ background: "#0f0f0f" }}
-                >
-                  ✅ Request sent successfully! We'll be in touch within 24 hours.
-                </div>
-              )}
 
               {/* Error Message */}
               {formState === "error" && (
