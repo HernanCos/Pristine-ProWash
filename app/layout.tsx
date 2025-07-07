@@ -5,6 +5,7 @@ import "./globals.css"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import MobileNav from "@/components/mobile-nav"
+import Script from "next/script"
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
   title: "Pristine ProWash – Roof, Gutter & Driveway Cleaning | Portland & Eugene",
   description:
     "Premium soft-wash roof cleaning, gutter oxidation removal & driveway oil-spot treatment. Free online quotes. Fully insured.",
-    generator: 'v0.dev'
+  generator: "v0.dev",
 }
 
 export default function RootLayout({
@@ -31,6 +32,16 @@ export default function RootLayout({
         <main className="flex min-h-screen flex-col">{children}</main>
         <Footer />
         <MobileNav />
+        {/* Google tag (gtag.js) */}
+        <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=AW-17289761916" />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17289761916');
+          `}
+        </Script>
       </body>
     </html>
   )
