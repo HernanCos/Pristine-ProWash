@@ -9,10 +9,10 @@ export const metadata: Metadata = {
 
 export default function ThankYou() {
   return (
-    <div className="flex flex-col items-center justify-center text-center text-white min-h-screen">
+    <div className="flex flex-col items-center justify-center text-center text-navy min-h-screen">
       <div className="pt-20">
-        <h1 className="hero-headline mb-4">Thanks for your quote request!</h1>
-        <p className="text-xl text-gray-300 mb-8">We’ll get back to you within 24 hours.</p>
+        <h1 className="hero-headline mb-4 text-navy">Thanks for your quote request!</h1>
+        <p className="text-xl text-gray-700 mb-8">We’ll get back to you within 24 hours.</p>
         <Link href="/" className="btn-secondary inline-flex items-center gap-2">
           <ArrowLeft size={18} />
           <span>Back to Home</span>

@@ -13,6 +13,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        navy: "var(--navy)",
+        cyan: "var(--cyan)",
+        cta: "var(--cta)",
+        white: "var(--white)",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
@@ -63,8 +67,10 @@ const config: Config = {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        charcoal: "#1A1A1A",
-        cyan: "#00BFFF",
+        page: "var(--page-bg)",
+        lightband: "var(--section-light)",
+        darkband: "var(--section-dark)",
+        footer: "var(--footer-bg)",
       },
       borderRadius: {
         lg: "var(--radius)",

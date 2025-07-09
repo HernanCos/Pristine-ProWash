@@ -53,18 +53,18 @@ function BeforeAfterSlider({ beforeImage, afterImage, alt }: BeforeAfterSliderPr
         </div>
       </div>
 
-      <div className="absolute top-4 left-4 bg-charcoal bg-opacity-75 text-white px-3 py-1 rounded-md z-40">Before</div>
+      <div className="absolute top-4 left-4 bg-navy bg-opacity-75 text-white px-3 py-1 rounded-md z-40">Before</div>
 
-      <div className="absolute top-4 right-4 bg-charcoal bg-opacity-75 text-white px-3 py-1 rounded-md z-40">After</div>
+      <div className="absolute top-4 right-4 bg-navy bg-opacity-75 text-white px-3 py-1 rounded-md z-40">After</div>
     </div>
   )
 }
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="section-padding">
+    <section id="gallery" className="section-padding bg-darkband">
       <div className="container">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">Before & After Gallery</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-navy">Before & After Gallery</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="space-y-3">
@@ -73,7 +73,7 @@ export default function Gallery() {
               afterImage="/images/roof-after.png"
               alt="Roof soft washing before and after showing moss and algae removal"
             />
-            <p className="text-center text-gray-300">Roof Soft Washing</p>
+            <p className="text-center text-gray-600">Roof Soft Washing</p>
           </div>
 
           <div className="space-y-3">
@@ -82,7 +82,7 @@ export default function Gallery() {
               afterImage="/images/gutter-after.png"
               alt="Gutter cleaning before and after showing debris removal and brightening"
             />
-            <p className="text-center text-gray-300">Gutter Cleaning & Brightening</p>
+            <p className="text-center text-gray-600">Gutter Cleaning & Brightening</p>
           </div>
 
           <div className="space-y-3">
@@ -91,7 +91,7 @@ export default function Gallery() {
               afterImage="/images/driveway-after.jpg"
               alt="Driveway cleaning before and after showing oil stain removal"
             />
-            <p className="text-center text-gray-300">Driveway & Concrete Cleaning</p>
+            <p className="text-center text-gray-600">Driveway & Concrete Cleaning</p>
           </div>
         </div>
 

@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Montserrat } from "next/font/google"
+import { Montserrat, Open_Sans } from "next/font/google"
 import "./globals.css"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
@@ -11,6 +11,12 @@ const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
   weight: ["700"],
+})
+
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  variable: "--font-open-sans",
+  weight: ["400", "600"],
 })
 
 export const metadata: Metadata = {
@@ -27,9 +33,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.variable} bg-charcoal text-white`}>
+      <body className={`${montserrat.variable} ${openSans.variable} bg-page text-[#111]`}>
         <Header />
-        <main className="flex min-h-screen flex-col">{children}</main>
+        <main className="flex min-h-screen flex-col pt-24 bg-lightband">{children}</main>
         <Footer />
         <MobileNav />
         {/* Google tag (gtag.js) */}

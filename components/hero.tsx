@@ -21,15 +21,16 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+    <section className="bg-lightband section-padding overflow-hidden">
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="fade-in">
-            <h1 className="hero-headline font-normal mb-4 leading-tight">
-              Restore Your Roof, Gutters & Driveway to Pristine Condition
+            <h1 className="hero-headline font-bold leading-tight">
+              Restore Your Home’s Fresh Look With Expert Exterior Cleaning
             </h1>
-            <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-lg font-normal">
-              Eco-safe soft washing and high-pressure cleaning trusted across Portland & Eugene
+            <p className="text-xl font-bold text-gray-700 my-8">
+              Licensed, student-run pros delivering eco-safe, fast roof, gutter, and driveway cleaning, all backed by a
+              satisfaction guarantee.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="#contact" className="btn-primary flex items-center justify-center gap-2">
@@ -44,16 +45,14 @@ export default function Hero() {
           </div>
 
           <div className="relative" ref={heroRef}>
-            <div className="rounded-lg overflow-hidden shadow-xl">
-              <Image
-                src="/images/hero.png"
-                alt="Beautiful modern home exterior showcasing professional pressure washing results"
-                width={800}
-                height={500}
-                className="w-full h-auto rounded-lg"
-                priority
-              />
-            </div>
+            <Image
+              src="/housewash.jpg"
+              alt="Technician soft-washing home siding, visible clean trail"
+              width={640}
+              height={720}
+              priority
+              className="rounded-lg border-2 border-navy shadow-lg"
+            />
           </div>
         </div>
       </div>

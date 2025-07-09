@@ -53,16 +53,16 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="section-padding">
+    <section id="contact" className="section-padding bg-darkband">
       <div className="container">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">Contact Us</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-navy">Contact Us</h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
-            <h3 className="text-xl font-bold mb-6">Request a Free Quote</h3>
+            <h3 className="text-xl font-bold mb-6 text-navy">Request a Free Quote</h3>
 
             {/* Quote Request Form */}
-            <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+            <div className="p-6 rounded-lg shadow-lg bg-gray-50">
               {/* 
                 FORM SETUP INSTRUCTIONS:
                 
@@ -80,7 +80,7 @@ export default function Contact() {
                 <input type="hidden" name="_subject" value="New Quote Request from PristineProWash" />
 
                 <div>
-                  <label htmlFor="name" className="block mb-2 text-sm font-medium">
+                  <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-700">
                     Full Name
                   </label>
                   <input
@@ -89,7 +89,7 @@ export default function Contact() {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full p-3 bg-gray-700 rounded-md"
+                    className="w-full p-3 rounded-md bg-white text-gray-900 border border-gray-300"
                     placeholder="Your name"
                     required
                     disabled={formState === "submitting"}
@@ -97,7 +97,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block mb-2 text-sm font-medium">
+                  <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-700">
                     Email Address
                   </label>
                   <input
@@ -106,7 +106,7 @@ export default function Contact() {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full p-3 bg-gray-700 rounded-md"
+                    className="w-full p-3 rounded-md bg-white text-gray-900 border border-gray-300"
                     placeholder="your@email.com"
                     required
                     disabled={formState === "submitting"}
@@ -114,7 +114,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="phone" className="block mb-2 text-sm font-medium">
+                  <label htmlFor="phone" className="block mb-2 text-sm font-medium text-gray-700">
                     Phone Number
                   </label>
                   <input
@@ -123,7 +123,7 @@ export default function Contact() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full p-3 bg-gray-700 rounded-md"
+                    className="w-full p-3 rounded-md bg-white text-gray-900 border border-gray-300"
                     placeholder="(555) 555-5555"
                     required
                     disabled={formState === "submitting"}
@@ -131,7 +131,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="address" className="block mb-2 text-sm font-medium">
+                  <label htmlFor="address" className="block mb-2 text-sm font-medium text-gray-700">
                     Address
                   </label>
                   <input
@@ -140,7 +140,7 @@ export default function Contact() {
                     name="address"
                     value={formData.address}
                     onChange={handleInputChange}
-                    className="w-full p-3 bg-gray-700 rounded-md"
+                    className="w-full p-3 rounded-md bg-white text-gray-900 border border-gray-300"
                     placeholder="Your address"
                     required
                     disabled={formState === "submitting"}
@@ -148,7 +148,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="service" className="block mb-2 text-sm font-medium">
+                  <label htmlFor="service" className="block mb-2 text-sm font-medium text-gray-700">
                     Service Needed
                   </label>
                   <select
@@ -156,7 +156,7 @@ export default function Contact() {
                     name="service"
                     value={formData.service}
                     onChange={handleInputChange}
-                    className="w-full p-3 bg-gray-700 rounded-md"
+                    className="w-full p-3 rounded-md bg-white text-gray-900 border border-gray-300"
                     required
                     disabled={formState === "submitting"}
                   >
@@ -169,7 +169,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block mb-2 text-sm font-medium">
+                  <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-700">
                     Additional Details
                   </label>
                   <textarea
@@ -178,18 +178,18 @@ export default function Contact() {
                     rows={4}
                     value={formData.message}
                     onChange={handleInputChange}
-                    className="w-full p-3 bg-gray-700 rounded-md"
+                    className="w-full p-3 rounded-md bg-white text-gray-900 border border-gray-300"
                     placeholder="Tell us more about your needs..."
                     disabled={formState === "submitting"}
                   ></textarea>
                 </div>
 
                 <div>
-                  <label className="block mb-2 text-sm font-medium">Upload Photos (optional)</label>
+                  <label className="block mb-2 text-sm font-medium text-gray-700">Upload Photos (optional)</label>
                   <div className="flex items-center justify-center w-full">
                     <label
                       htmlFor="dropzone-file"
-                      className="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-600 border-dashed rounded-lg cursor-pointer bg-gray-700 hover:bg-gray-600"
+                      className="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-600 border-dashed rounded-lg cursor-pointer bg-white hover:bg-gray-100 border-gray-300"
                     >
                       <div className="flex flex-col items-center justify-center pt-5 pb-6">
                         <svg
@@ -207,10 +207,10 @@ export default function Contact() {
                             d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
                           />
                         </svg>
-                        <p className="mb-2 text-sm text-gray-400">
+                        <p className="mb-2 text-sm text-gray-500">
                           <span className="font-semibold">Click to upload</span> or drag and drop
                         </p>
-                        <p className="text-xs text-gray-400">PNG, JPG or JPEG (MAX. 5MB)</p>
+                        <p className="text-xs text-gray-500">PNG, JPG or JPEG (MAX. 5MB)</p>
                       </div>
                       <input
                         id="dropzone-file"
@@ -234,12 +234,9 @@ export default function Contact() {
 
               {/* Error Message */}
               {formState === "error" && (
-                <div
-                  className="mt-4 p-6 bg-red-900 text-white rounded-lg text-center"
-                  style={{ background: "#330000" }}
-                >
+                <div className="mt-4 p-4 bg-red-100 text-red-800 rounded-lg text-center">
                   ⚠️ Oops! Something went wrong. Please email{" "}
-                  <a href="mailto:info@pristineprowash.net" className="text-white underline hover:text-cyan">
+                  <a href="mailto:info@pristineprowash.net" className="text-red-800 underline hover:text-cyan">
                     info@pristineprowash.net
                   </a>
                   .
@@ -249,9 +246,9 @@ export default function Contact() {
           </div>
 
           <div>
-            <h3 className="text-xl font-bold mb-6">Our Service Area</h3>
+            <h3 className="text-xl font-bold mb-6 text-navy">Our Service Area</h3>
 
-            <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg mb-8">
+            <div className="rounded-lg overflow-hidden shadow-lg mb-8 bg-gray-100">
               <div className="relative h-[300px]">
                 <Image
                   src="/images/map.png"
@@ -266,8 +263,8 @@ export default function Contact() {
               <div className="flex items-start gap-4">
                 <Phone className="h-6 w-6 text-cyan flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-bold mb-1">Phone</h4>
-                  <a href="tel:9712806104" className="text-gray-300 hover:text-cyan transition-colors">
+                  <h4 className="font-bold mb-1 text-navy">Phone</h4>
+                  <a href="tel:9712806104" className="text-gray-600 hover:text-navy transition-colors">
                     (971) 280-6104
                   </a>
                 </div>
@@ -276,8 +273,8 @@ export default function Contact() {
               <div className="flex items-start gap-4">
                 <Mail className="h-6 w-6 text-cyan flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-bold mb-1">Email</h4>
-                  <a href="mailto:info@pristineprowash.net" className="text-gray-300 hover:text-cyan transition-colors">
+                  <h4 className="font-bold mb-1 text-navy">Email</h4>
+                  <a href="mailto:info@pristineprowash.net" className="text-gray-600 hover:text-navy transition-colors">
                     info@pristineprowash.net
                   </a>
                 </div>
@@ -286,8 +283,8 @@ export default function Contact() {
               <div className="flex items-start gap-4">
                 <MapPin className="h-6 w-6 text-cyan flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-bold mb-1">Service Areas</h4>
-                  <p className="text-gray-300">Portland, Eugene, and surrounding areas within a 30-mile radius</p>
+                  <h4 className="font-bold mb-1 text-navy">Service Areas</h4>
+                  <p className="text-gray-600">Portland, Eugene, and surrounding areas within a 30-mile radius</p>
                 </div>
               </div>
             </div>

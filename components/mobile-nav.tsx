@@ -9,21 +9,21 @@ export default function MobileNav() {
   if (!isMobile) return null
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-charcoal shadow-lg py-3 px-4 z-50">
+    <div className="fixed bottom-0 left-0 right-0 bg-white shadow-[0_-2px_5px_rgba(0,0,0,0.05)] py-3 px-4 z-50">
       <div className="flex items-center justify-between">
         <a
           href="#contact"
-          className="flex-1 flex items-center justify-center gap-2 bg-cyan text-white py-3 rounded-l-md"
+          className="flex-1 flex items-center justify-center gap-2 bg-cta text-white py-3 rounded-l-md font-semibold"
         >
           <FileText size={20} />
-          <span className="font-medium">Get a Free Quote</span>
+          <span>Get a Free Quote</span>
         </a>
         <a
           href="tel:9712806104"
-          className="flex-1 flex items-center justify-center gap-2 bg-white text-charcoal py-3 rounded-r-md"
+          className="flex-1 flex items-center justify-center gap-2 bg-white text-navy border border-navy py-3 rounded-r-md font-semibold"
         >
           <Phone size={20} />
-          <span className="font-medium">Call Now</span>
+          <span>Call Now</span>
         </a>
       </div>
     </div>

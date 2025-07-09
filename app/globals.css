@@ -3,26 +3,23 @@
 @tailwind utilities;
 
 :root {
-  --charcoal: #1a1a1a;
   --white: #ffffff;
+  --navy: #1a3d5d;
   --cyan: #00bfff;
-}
-
-* {
-  font-family: Helvetica, Arial, sans-serif;
+  --cta: #00bfff;
+  --page-bg: #e9edf2; /* base off-white (unused for bands) */
+  --section-light: #f0f2f5; /* lighter gray */
+  --section-dark: #d9dee5; /* darker gray */
+  --footer-bg: #d8e9ff;
 }
 
 body {
+  background: var(--page-bg);
+  color: #111;
   letter-spacing: 0.025em;
 }
 
-h1 {
-  font-family: var(--font-montserrat);
-  font-weight: 700;
-  font-size: 44px;
-  letter-spacing: 0.05em;
-}
-
+h1,
 .hero-headline {
   font-family: var(--font-montserrat);
   font-weight: 700;
@@ -62,7 +59,11 @@ span,
 a,
 button,
 input,
-textarea {
+textarea,
+label,
+select,
+div {
+  font-family: var(--font-open-sans);
   font-weight: 400;
 }
 
@@ -99,11 +100,11 @@ textarea {
 }
 
 .btn-primary {
-  @apply bg-cyan text-white font-medium py-3 px-6 rounded-md transition-all duration-300 hover:bg-opacity-90;
+  @apply bg-cyan text-white font-semibold py-3 px-6 rounded-md hover:brightness-110 transition;
 }
 
 .btn-secondary {
-  @apply bg-transparent border border-white text-white font-medium py-3 px-6 rounded-md transition-all duration-300 hover:bg-white hover:bg-opacity-10;
+  @apply border border-navy text-navy py-3 px-6 rounded-md hover:bg-navy hover:text-white transition;
 }
 
 .section-padding {

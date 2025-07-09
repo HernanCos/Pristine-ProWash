@@ -1,130 +1,115 @@
-"use client"
-
-import { useState } from "react"
-import { Home, Droplet, RouteIcon as Road, ChevronDown, ChevronUp } from "lucide-react"
+const services = [
+  {
+    name: "Roof Soft Wash",
+    desc: "Low-pressure, eco-safe removal of moss & algae that extends shingle life.",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="text-cyan mb-4"
+      >
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <path d="M9 15a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-2z"></path>
+        <path d="M7 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"></path>
+        <path d="M18 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"></path>
+      </svg>
+    ),
+    slug: "roof-soft-wash",
+  },
+  {
+    name: "Gutter Cleaning & Brightening",
+    desc: "Debris removal, downspout flush, and oxidation rinse for like-new gutters.",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="text-cyan mb-4"
+      >
+        <path d="M4 5h16v4H4z" />
+        <path d="M12 9v5" />
+        <path d="M12 18a2 2 0 0 1-2-2c0-1.1.8-2 2-2s2 .9 2 2a2 2 0 0 1-2 2z" />
+      </svg>
+    ),
+    slug: "gutter-cleaning",
+  },
+  {
+    name: "Driveway & Concrete Cleaning",
+    desc: "Surface-cleaner wash for driveways, patios, and sidewalks, no streaks.",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="text-cyan mb-4"
+      >
+        <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+        <line x1="3" y1="9" x2="21" y2="9"></line>
+        <line x1="3" y1="15" x2="21" y2="15"></line>
+        <line x1="9" y1="3" x2="9" y2="21"></line>
+        <line x1="15" y1="3" x2="15" y2="21"></line>
+      </svg>
+    ),
+    slug: "driveway-cleaning",
+  },
+  {
+    name: "Deck & Fence Cleaning",
+    desc: "Gentle wood wash restores color and preps surfaces for stain or sealant.",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="text-cyan mb-4"
+      >
+        <rect width="20" height="4" x="2" y="6" rx="1"></rect>
+        <rect width="20" height="4" x="2" y="11" rx="1"></rect>
+        <rect width="20" height="4" x="2" y="16" rx="1"></rect>
+      </svg>
+    ),
+    slug: "deck-fence-cleaning",
+  },
+]
 
 export default function Services() {
-  const [openAccordion, setOpenAccordion] = useState<string | null>(null)
-
-  const toggleAccordion = (id: string) => {
-    setOpenAccordion(openAccordion === id ? null : id)
-  }
-
   return (
-    <section id="services" className="section-padding bg-gray-900">
+    <section id="services" className="section-padding bg-lightband">
       <div className="container">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">Our Services</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Roof Soft Wash */}
-          <div className="bg-charcoal rounded-lg p-6 shadow-lg">
-            <div className="flex flex-row md:flex-col items-start gap-4">
-              <div className="bg-cyan bg-opacity-20 p-3 rounded-full">
-                <Home className="h-6 w-6 text-cyan" />
-              </div>
-              <div className="flex-1">
-                <h3 className="text-xl font-bold mb-3">Roof Soft Wash</h3>
-                <p className="text-gray-300 mb-4">
-                  Safe algae & moss removal that prolongs shingle life. Our gentle cleaning process removes harmful
-                  growth without damaging your roof's surface or warranty.
-                </p>
-                <button
-                  onClick={() => toggleAccordion("roofDetails")}
-                  className="text-cyan hover:underline inline-flex items-center gap-1 transition-colors"
-                >
-                  {openAccordion === "roofDetails" ? "Close" : "Learn More"}
-                  {openAccordion === "roofDetails" ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-                </button>
-
-                <div
-                  className={`overflow-hidden transition-all duration-200 ease-in-out ${
-                    openAccordion === "roofDetails" ? "max-h-96 mt-4" : "max-h-0"
-                  }`}
-                >
-                  <div id="roofDetails" className="text-gray-300 text-sm leading-relaxed">
-                    Using a low-pressure soft-wash system, we apply a biodegradable detergent that penetrates deep into
-                    roof pores, breaking down black-streak algae, lichen and moss at the root. After application the
-                    solution is left in place so it can keep working; we return about three weeks later to perform a
-                    gentle rinse with garden-hose pressure, removing the remaining dead growth. Downspout discharge is
-                    bagged to protect landscaping, and we finish with a gutter flow check.
-                  </div>
-                </div>
-              </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {services.map((service) => (
+            <div key={service.slug} className="bg-white rounded-lg p-6 shadow-lg flex flex-col items-start text-left">
+              {service.icon}
+              <h3 className="text-xl font-bold mb-3 text-navy">{service.name}</h3>
+              <p className="text-gray-600">{service.desc}</p>
             </div>
-          </div>
-
-          {/* Gutter Cleaning */}
-          <div className="bg-charcoal rounded-lg p-6 shadow-lg">
-            <div className="flex flex-row md:flex-col items-start gap-4">
-              <div className="bg-cyan bg-opacity-20 p-3 rounded-full">
-                <Droplet className="h-6 w-6 text-cyan" />
-              </div>
-              <div className="flex-1">
-                <h3 className="text-xl font-bold mb-3">Gutter Cleaning & Brightening</h3>
-                <p className="text-gray-300 mb-4">
-                  Complete debris removal, downspout flush, and oxidation removal with F13. Restore your gutters to
-                  like-new condition while ensuring proper water flow.
-                </p>
-                <button
-                  onClick={() => toggleAccordion("gutterDetails")}
-                  className="text-cyan hover:underline inline-flex items-center gap-1 transition-colors"
-                >
-                  {openAccordion === "gutterDetails" ? "Close" : "Learn More"}
-                  {openAccordion === "gutterDetails" ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-                </button>
-
-                <div
-                  className={`overflow-hidden transition-all duration-200 ease-in-out ${
-                    openAccordion === "gutterDetails" ? "max-h-96 mt-4" : "max-h-0"
-                  }`}
-                >
-                  <div id="gutterDetails" className="text-gray-300 text-sm leading-relaxed">
-                    First we hand-remove leaves, twigs and sediment, then flush each downspout to ensure free flow.
-                    Next, we apply F13 gutter brightener to dissolve oxidation 'tiger stripes' on gutter faces,
-                    restoring their original finish without repainting. Clean bright gutters protect fascia boards and
-                    keep water away from your foundation.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Driveway Cleaning */}
-          <div className="bg-charcoal rounded-lg p-6 shadow-lg">
-            <div className="flex flex-row md:flex-col items-start gap-4">
-              <div className="bg-cyan bg-opacity-20 p-3 rounded-full">
-                <Road className="h-6 w-6 text-cyan" />
-              </div>
-              <div className="flex-1">
-                <h3 className="text-xl font-bold mb-3">Driveway & Concrete Cleaning</h3>
-                <p className="text-gray-300 mb-4">
-                  Professional surface-cleaner pass with oil-spot pretreatment using F9 Double Eagle. Restore your
-                  concrete surfaces to their original clean appearance.
-                </p>
-                <button
-                  onClick={() => toggleAccordion("drivewayDetails")}
-                  className="text-cyan hover:underline inline-flex items-center gap-1 transition-colors"
-                >
-                  {openAccordion === "drivewayDetails" ? "Close" : "Learn More"}
-                  {openAccordion === "drivewayDetails" ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-                </button>
-
-                <div
-                  className={`overflow-hidden transition-all duration-200 ease-in-out ${
-                    openAccordion === "drivewayDetails" ? "max-h-96 mt-4" : "max-h-0"
-                  }`}
-                >
-                  <div id="drivewayDetails" className="text-gray-300 text-sm leading-relaxed">
-                    Stubborn oil, rust and organic stains are pre-treated with F9 Double Eagle degreaser, followed by a
-                    concentrated surfactant pre-treat that lifts deep contamination for uniform cleaning. We then use a
-                    20-inch surface cleaner with balanced nozzles for streak-free 4,200 PSI washing that removes
-                    embedded grime without etching the slab. A post-treat solution evens out lighter patches and leaves
-                    the concrete uniformly bright.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
