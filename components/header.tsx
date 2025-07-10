@@ -42,7 +42,17 @@ export default function Header() {
                 </Link>
               </nav>
               <div className="ml-auto flex items-center gap-4">
-                <a href="tel:9712806104" className="text-navy hover:text-cyan transition-colors">
+                <a
+                  href="tel:9712806104"
+                  className="text-navy hover:text-cyan transition-colors"
+                  onClick={() => {
+                    if (typeof window.gtag === "function") {
+                      window.gtag("event", "conversion", {
+                        send_to: "AW-17289761916/O-RxCOT-u-0aEPyos7RA",
+                      })
+                    }
+                  }}
+                >
                   (971) 280-6104
                 </a>
                 <a href="#contact" className="btn-primary">

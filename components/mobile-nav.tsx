@@ -21,6 +21,13 @@ export default function MobileNav() {
         <a
           href="tel:9712806104"
           className="flex-1 flex items-center justify-center gap-2 bg-white text-navy border border-navy py-3 rounded-r-md font-semibold"
+          onClick={() => {
+            if (typeof window.gtag === "function") {
+              window.gtag("event", "conversion", {
+                send_to: "AW-17289761916/O-RxCOT-u-0aEPyos7RA",
+              })
+            }
+          }}
         >
           <Phone size={20} />
           <span>Call Now</span>

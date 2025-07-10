@@ -48,6 +48,13 @@ export default function RootLayout({
             gtag('config', 'AW-17289761916');
           `}
         </Script>
+        <Script id="gtag-phone-config" strategy="afterInteractive">
+          {`
+            gtag('config', 'AW-17289761916/O-RxCOT-u-0aEPyos7RA', {
+              'phone_conversion_number': '(971) 280-6104'
+            });
+          `}
+        </Script>
       </body>
     </html>
   )
