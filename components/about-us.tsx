@@ -3,20 +3,20 @@ export default function AboutUs() {
     <section className="bg-lightband py-16">
       <div className="container mx-auto max-w-3xl text-navy">
         {/* Heading */}
-        <h2 className="text-3xl font-semibold mb-6 text-center">About Pristine ProWash</h2>
+        <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-center">About Pristine ProWash</h2>
         {/* Cyan divider */}
         <hr className="border-b-2 border-cyan my-8" />
         {/* Body copy */}
-        <p className="mb-4 text-gray-700 leading-relaxed">
+        <p className="mb-4 text-gray-700 leading-relaxed text-base">
           I’m Hernan, a finance student at the University of Oregon and the owner-operator of Pristine ProWash. What
           began with me scrubbing mud off bikes and surfboards has grown into a student-run crew that gives every roof,
           gutter, and driveway the same care I’d give my own home.
         </p>
-        <p className="mb-4 text-gray-700 leading-relaxed">
+        <p className="mb-4 text-gray-700 leading-relaxed text-base">
           Portland is where I was raised, so I’m committed to keeping our neighborhoods clean with plant-safe
           detergents, clear up-front pricing, and a simple guarantee: if you’re not happy, you don’t pay.
         </p>
-        <p className="mb-6 text-gray-700 leading-relaxed">
+        <p className="mb-6 text-gray-700 leading-relaxed text-base">
           Whether you need a gentle moss soft-wash or a concrete deep-clean before guests arrive, I’m only a text away.
           Let’s make your place look pristine again. Reach out for a free quote today.
         </p>
@@ -39,8 +39,8 @@ export default function AboutUs() {
                 <path d="m9 12 2 2 4-4" />
               </svg>
             </div>
-            <h3 className="font-semibold">Safety First</h3>
-            <p className="text-sm text-gray-700">Eco-friendly detergents</p>
+            <h3 className="font-semibold text-xl md:text-2xl">Safety First</h3>
+            <p className="text-base text-gray-700">Eco-friendly detergents</p>
           </div>
           {/* Transparent Pricing */}
           <div>
@@ -59,8 +59,8 @@ export default function AboutUs() {
                 <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
               </svg>
             </div>
-            <h3 className="font-semibold">Transparent Pricing</h3>
-            <p className="text-sm text-gray-700">No hidden fees or surprises</p>
+            <h3 className="font-semibold text-xl md:text-2xl">Transparent Pricing</h3>
+            <p className="text-base text-gray-700">No hidden fees or surprises</p>
           </div>
           {/* Respect for Property & Schedule */}
           <div>
@@ -80,8 +80,8 @@ export default function AboutUs() {
                 <path d="M12 17h.01"></path>
               </svg>
             </div>
-            <h3 className="font-semibold">Respect for Your Property &amp; Schedule</h3>
-            <p className="text-sm text-gray-700">Careful work and on-time arrivals</p>
+            <h3 className="font-semibold text-xl md:text-2xl">Respect for Your Property &amp; Schedule</h3>
+            <p className="text-base text-gray-700">Careful work and on-time arrivals</p>
           </div>
         </div>
       </div>

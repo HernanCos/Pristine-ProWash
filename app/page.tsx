@@ -7,6 +7,7 @@ import Process from "@/components/process"
 import AboutUs from "@/components/about-us"
 import CtaBanner from "@/components/cta-banner"
 import Contact from "@/components/contact"
+import Benefits from "@/components/benefits"
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <TrustBar />
       <Services />
       <Gallery />
+      <Benefits />
       <WhyChooseUs />
       <Process />
       <AboutUs />

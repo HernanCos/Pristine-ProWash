@@ -23,8 +23,8 @@ export default function Process() {
               <path d="M15 2v4" />
               <path d="m9 14 2 2 4-4" />
             </svg>
-            <h3 className="text-xl font-bold mb-2 text-navy">1. Request Quote Online</h3>
-            <p className="text-gray-600">
+            <h3 className="text-xl md:text-2xl font-bold mb-2 text-navy">1. Request Quote Online</h3>
+            <p className="text-gray-600 text-base">
               Fill out our simple form to get a detailed quote tailored to your specific needs.
             </p>
           </div>
@@ -49,8 +49,8 @@ export default function Process() {
               <path d="M10 3h4" />
               <path d="M17 21H7" />
             </svg>
-            <h3 className="text-xl font-bold mb-2 text-navy">2. On-Site Service</h3>
-            <p className="text-gray-600">
+            <h3 className="text-xl md:text-2xl font-bold mb-2 text-navy">2. On-Site Service</h3>
+            <p className="text-gray-600 text-base">
               Our team arrives with professional equipment for thorough soft washing and pressure cleaning.
             </p>
           </div>
@@ -70,8 +70,8 @@ export default function Process() {
             >
               <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
             </svg>
-            <h3 className="text-xl font-bold mb-2 text-navy">3. Final Walk-Through</h3>
-            <p className="text-gray-600">
+            <h3 className="text-xl md:text-2xl font-bold mb-2 text-navy">3. Final Walk-Through</h3>
+            <p className="text-gray-600 text-base">
               We complete a detailed inspection with you to ensure 100% satisfaction with our work.
             </p>
           </div>

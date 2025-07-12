@@ -19,7 +19,7 @@ export default function Footer() {
           </div>
 
           <div className="mb-6 md:mb-0 relative">
-            <h3 className="font-bold mb-4">Quick Links</h3>
+            <h3 className="font-bold mb-4 text-xl md:text-2xl">Quick Links</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/" className="text-navy hover:text-cyan transition-colors">
@@ -52,7 +52,7 @@ export default function Footer() {
           </div>
 
           <div className="relative">
-            <h3 className="font-bold mb-4">Services</h3>
+            <h3 className="font-bold mb-4 text-xl md:text-2xl">Services</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="#services" className="text-navy hover:text-cyan transition-colors">

@@ -59,7 +59,7 @@ export default function Contact() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
-            <h3 className="text-xl font-bold mb-6 text-navy">Request a Free Quote</h3>
+            <h3 className="text-xl md:text-2xl font-bold mb-6 text-navy">Request a Free Quote</h3>
 
             {/* Quote Request Form */}
             <div className="p-6 rounded-lg shadow-lg bg-gray-50">
@@ -246,7 +246,7 @@ export default function Contact() {
           </div>
 
           <div>
-            <h3 className="text-xl font-bold mb-6 text-navy">Our Service Area</h3>
+            <h3 className="text-xl md:text-2xl font-bold mb-6 text-navy">Our Service Area</h3>
 
             <div className="rounded-lg overflow-hidden shadow-lg mb-8 bg-gray-100">
               <div className="relative h-[300px]">
@@ -263,7 +263,7 @@ export default function Contact() {
               <div className="flex items-start gap-4">
                 <Phone className="h-6 w-6 text-cyan flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-bold mb-1 text-navy">Phone</h4>
+                  <h4 className="font-bold mb-1 text-navy text-lg md:text-xl">Phone</h4>
                   <a href="tel:9712806104" className="text-gray-600 hover:text-navy transition-colors">
                     (971) 280-6104
                   </a>
@@ -273,7 +273,7 @@ export default function Contact() {
               <div className="flex items-start gap-4">
                 <Mail className="h-6 w-6 text-cyan flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-bold mb-1 text-navy">Email</h4>
+                  <h4 className="font-bold mb-1 text-navy text-lg md:text-xl">Email</h4>
                   <a href="mailto:info@pristineprowash.net" className="text-gray-600 hover:text-navy transition-colors">
                     info@pristineprowash.net
                   </a>
@@ -283,8 +283,10 @@ export default function Contact() {
               <div className="flex items-start gap-4">
                 <MapPin className="h-6 w-6 text-cyan flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-bold mb-1 text-navy">Service Areas</h4>
-                  <p className="text-gray-600">Portland, Eugene, and surrounding areas within a 30-mile radius</p>
+                  <h4 className="font-bold mb-1 text-navy text-lg md:text-xl">Service Areas</h4>
+                  <p className="text-gray-600 text-base">
+                    Portland, Eugene, and surrounding areas within a 30-mile radius
+                  </p>
                 </div>
               </div>
             </div>

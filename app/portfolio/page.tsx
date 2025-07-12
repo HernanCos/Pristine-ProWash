@@ -10,7 +10,7 @@ export default function Portfolio() {
       {/* Main content - centered */}
       <div className="flex-1 flex items-center justify-center px-4">
         <div className="text-center max-w-2xl">
-          <h1 className="hero-headline font-normal mb-6 leading-tight text-navy">Portfolio Coming Soon</h1>
+          <h1 className="text-3xl md:text-4xl font-normal mb-6 leading-tight text-navy">Portfolio Coming Soon</h1>
           <p className="text-lg md:text-xl text-gray-700 mb-8 max-w-lg mx-auto font-normal">
             We're building our gallery. In the meantime, follow our latest projects on Instagram @PristineProWash.
           </p>

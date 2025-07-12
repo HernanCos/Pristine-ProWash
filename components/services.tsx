@@ -1,3 +1,7 @@
+import Link from "next/link"
+import { ArrowRight, Home } from "lucide-react"
+import { cn } from "@/lib/utils"
+
 const services = [
   {
     name: "Roof Soft Wash",
@@ -13,7 +17,7 @@ const services = [
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="text-cyan mb-4"
+        className="mb-4"
       >
         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
         <path d="M9 15a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-2z"></path>
@@ -22,6 +26,7 @@ const services = [
       </svg>
     ),
     slug: "roof-soft-wash",
+    image: "/Roof.jpg",
   },
   {
     name: "Gutter Cleaning & Brightening",
@@ -37,7 +42,7 @@ const services = [
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="text-cyan mb-4"
+        className="mb-4"
       >
         <path d="M4 5h16v4H4z" />
         <path d="M12 9v5" />
@@ -45,6 +50,7 @@ const services = [
       </svg>
     ),
     slug: "gutter-cleaning",
+    image: "/Gutter.jpg",
   },
   {
     name: "Driveway & Concrete Cleaning",
@@ -60,7 +66,7 @@ const services = [
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="text-cyan mb-4"
+        className="mb-4"
       >
         <rect width="18" height="18" x="3" y="3" rx="2"></rect>
         <line x1="3" y1="9" x2="21" y2="9"></line>
@@ -70,6 +76,7 @@ const services = [
       </svg>
     ),
     slug: "driveway-cleaning",
+    image: "/Driveway.jpg",
   },
   {
     name: "Deck & Fence Cleaning",
@@ -85,7 +92,7 @@ const services = [
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="text-cyan mb-4"
+        className="mb-4"
       >
         <rect width="20" height="4" x="2" y="6" rx="1"></rect>
         <rect width="20" height="4" x="2" y="11" rx="1"></rect>
@@ -93,21 +100,48 @@ const services = [
       </svg>
     ),
     slug: "deck-fence-cleaning",
+    image: "/Deck&Fence.png",
+  },
+  {
+    name: "House Soft Wash",
+    desc: "Gentle soft wash to remove dirt and mildew from all exterior surfaces.",
+    icon: <Home className="mb-4" size={32} />,
+    slug: "house-soft-wash",
+    image: "/House.jpg",
   },
 ]
 
 export default function Services() {
   return (
-    <section id="services" className="section-padding bg-lightband">
+    <section id="services" className="section-padding bg-darkband">
       <div className="container">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">Our Services</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
           {services.map((service) => (
-            <div key={service.slug} className="bg-white rounded-lg p-6 shadow-lg flex flex-col items-start text-left">
-              {service.icon}
-              <h3 className="text-xl font-bold mb-3 text-navy">{service.name}</h3>
-              <p className="text-gray-600">{service.desc}</p>
+            <div
+              key={service.slug}
+              className={cn(
+                "relative bg-center rounded-lg shadow-lg h-80 flex flex-col justify-between text-white overflow-hidden",
+                service.slug === "driveway-cleaning" ? "bg-contain bg-no-repeat bg-gray-800" : "bg-cover",
+              )}
+              style={{ backgroundImage: `url(${service.image})` }}
+            >
+              <div className="absolute inset-0 bg-black/25"></div>
+              <div className="relative z-10 p-6 flex flex-col items-center text-center flex-grow justify-center">
+                <div className="text-cyan">{service.icon}</div>
+                <h3 className="text-xl font-bold mb-3">{service.name}</h3>
+                <p className="text-sm">{service.desc}</p>
+              </div>
+              <div className="relative z-10 p-4 text-center">
+                <Link
+                  href="#contact"
+                  className="font-semibold hover:text-cyan transition-colors inline-flex items-center gap-1"
+                >
+                  <span>Learn More</span>
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
             </div>
           ))}
         </div>

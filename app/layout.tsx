@@ -4,7 +4,6 @@ import { Montserrat, Open_Sans } from "next/font/google"
 import "./globals.css"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
-import MobileNav from "@/components/mobile-nav"
 import Script from "next/script"
 
 const montserrat = Montserrat({
@@ -37,7 +36,6 @@ export default function RootLayout({
         <Header />
         <main className="flex min-h-screen flex-col pt-24 bg-lightband">{children}</main>
         <Footer />
-        <MobileNav />
         {/* Google tag (gtag.js) */}
         <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=AW-17289761916" />
         <Script id="gtag-init" strategy="afterInteractive">

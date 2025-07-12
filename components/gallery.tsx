@@ -32,7 +32,7 @@ function BeforeAfterSlider({ beforeImage, afterImage, alt }: BeforeAfterSliderPr
 
   return (
     <div
-      className="relative w-full h-[300px] md:h-[400px] overflow-hidden rounded-lg cursor-grab"
+      className="relative w-full h-[300px] md:h-[400px] overflow-hidden rounded-lg cursor-grab shadow-xl"
       onMouseMove={handleMouseMove}
       onTouchMove={handleTouchMove}
     >
@@ -48,51 +48,61 @@ function BeforeAfterSlider({ beforeImage, afterImage, alt }: BeforeAfterSliderPr
         className="absolute top-0 bottom-0 w-1 bg-white z-30 cursor-col-resize"
         style={{ left: `${sliderPosition}%`, transform: "translateX(-50%)" }}
       >
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-white rounded-full flex items-center justify-center">
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-md">
           <div className="w-4 h-4 bg-cyan rounded-full"></div>
         </div>
       </div>
 
-      <div className="absolute top-4 left-4 bg-navy bg-opacity-75 text-white px-3 py-1 rounded-md z-40">Before</div>
+      <div className="absolute top-4 left-4 bg-navy bg-opacity-75 text-white px-3 py-1 rounded-md z-40 text-sm">
+        Before
+      </div>
 
-      <div className="absolute top-4 right-4 bg-navy bg-opacity-75 text-white px-3 py-1 rounded-md z-40">After</div>
+      <div className="absolute top-4 right-4 bg-navy bg-opacity-75 text-white px-3 py-1 rounded-md z-40 text-sm">
+        After
+      </div>
     </div>
   )
 }
 
+const galleryItems = [
+  {
+    beforeImage: "/images/roof-before.png",
+    afterImage: "/images/roof-after.png",
+    alt: "Roof soft washing before and after showing moss and algae removal",
+    caption: "Roof Soft Washing",
+    positionClasses: "lg:absolute lg:top-0 lg:left-0 lg:w-[45%] lg:rotate-[-3deg]",
+  },
+  {
+    beforeImage: "/images/gutter-before.png",
+    afterImage: "/images/gutter-after.png",
+    alt: "Gutter cleaning before and after showing debris removal and brightening",
+    caption: "Gutter Cleaning & Brightening",
+    positionClasses: "lg:absolute lg:bottom-0 lg:left-1/2 lg:-translate-x-1/2 lg:w-[45%] z-10",
+  },
+  {
+    beforeImage: "/images/driveway-before.png",
+    afterImage: "/images/driveway-after.jpg",
+    alt: "Driveway cleaning before and after showing oil stain removal",
+    caption: "Driveway & Concrete Cleaning",
+    positionClasses: "lg:absolute lg:top-[15%] lg:right-0 lg:w-[45%] lg:rotate-[2deg]",
+  },
+]
+
 export default function Gallery() {
   return (
-    <section id="gallery" className="section-padding bg-darkband">
+    <section id="gallery" className="section-padding bg-lightband overflow-hidden">
       <div className="container">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-navy">Before & After Gallery</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-navy">Mini Gallery</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="space-y-3">
-            <BeforeAfterSlider
-              beforeImage="/images/roof-before.png"
-              afterImage="/images/roof-after.png"
-              alt="Roof soft washing before and after showing moss and algae removal"
-            />
-            <p className="text-center text-gray-600">Roof Soft Washing</p>
-          </div>
-
-          <div className="space-y-3">
-            <BeforeAfterSlider
-              beforeImage="/images/gutter-before.png"
-              afterImage="/images/gutter-after.png"
-              alt="Gutter cleaning before and after showing debris removal and brightening"
-            />
-            <p className="text-center text-gray-600">Gutter Cleaning & Brightening</p>
-          </div>
-
-          <div className="space-y-3">
-            <BeforeAfterSlider
-              beforeImage="/images/driveway-before.png"
-              afterImage="/images/driveway-after.jpg"
-              alt="Driveway cleaning before and after showing oil stain removal"
-            />
-            <p className="text-center text-gray-600">Driveway & Concrete Cleaning</p>
-          </div>
+        <div className="relative h-auto lg:h-[750px] flex flex-col lg:block gap-12">
+          {galleryItems.map((item) => (
+            <div key={item.caption} className={item.positionClasses}>
+              <div className="space-y-3">
+                <BeforeAfterSlider beforeImage={item.beforeImage} afterImage={item.afterImage} alt={item.alt} />
+                <p className="text-center text-gray-600 text-base">{item.caption}</p>
+              </div>
+            </div>
+          ))}
         </div>
 
         <div className="mt-10 text-center">

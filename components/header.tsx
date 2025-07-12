@@ -4,10 +4,8 @@ import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Menu } from "lucide-react"
-import { useMobile } from "@/hooks/use-mobile"
 
 export default function Header() {
-  const isMobile = useMobile()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleMenu = () => {
@@ -22,54 +20,58 @@ export default function Header() {
             <Image src="/LOGO.png" alt="Pristine ProWash logo" width={90} height={90} priority />
           </Link>
 
-          {!isMobile ? (
-            <>
-              <nav className="ml-8 flex items-center gap-6 font-bold text-navy">
-                <Link href="/" className="hover:text-cyan transition-colors">
-                  Home
-                </Link>
-                <Link href="#services" className="hover:text-cyan transition-colors">
-                  Services
-                </Link>
-                <Link href="#gallery" className="hover:text-cyan transition-colors">
-                  Gallery
-                </Link>
-                <Link href="#about" className="hover:text-cyan transition-colors">
-                  About
-                </Link>
-                <Link href="#contact" className="hover:text-cyan transition-colors">
-                  Contact
-                </Link>
-              </nav>
-              <div className="ml-auto flex items-center gap-4">
-                <a
-                  href="tel:9712806104"
-                  className="text-navy hover:text-cyan transition-colors"
-                  onClick={() => {
-                    if (typeof window.gtag === "function") {
-                      window.gtag("event", "conversion", {
-                        send_to: "AW-17289761916/O-RxCOT-u-0aEPyos7RA",
-                      })
-                    }
-                  }}
-                >
-                  (971) 280-6104
-                </a>
-                <a href="#contact" className="btn-primary">
-                  Get a Free Quote
-                </a>
-              </div>
-            </>
-          ) : (
-            <button onClick={toggleMenu} className="ml-auto text-navy p-2 rounded-md" aria-label="Toggle menu">
-              <Menu size={24} />
-            </button>
-          )}
+          {/* Desktop Navigation */}
+          <nav className="ml-8 hidden md:flex items-center gap-6 font-bold text-navy">
+            <Link href="/" className="hover:text-cyan transition-colors">
+              Home
+            </Link>
+            <Link href="#services" className="hover:text-cyan transition-colors">
+              Services
+            </Link>
+            <Link href="#gallery" className="hover:text-cyan transition-colors">
+              Gallery
+            </Link>
+            <Link href="#about" className="hover:text-cyan transition-colors">
+              About
+            </Link>
+            <Link href="#contact" className="hover:text-cyan transition-colors">
+              Contact
+            </Link>
+          </nav>
+          <div className="ml-auto hidden md:flex items-center gap-4">
+            <a
+              href="tel:9712806104"
+              className="text-navy hover:text-cyan transition-colors"
+              onClick={() => {
+                if (typeof window.gtag === "function") {
+                  window.gtag("event", "conversion", {
+                    send_to: "AW-17289761916/O-RxCOT-u-0aEPyos7RA",
+                  })
+                }
+              }}
+            >
+              (971) 280-6104
+            </a>
+            <a href="#contact" className="btn-primary">
+              Get a Free Quote
+            </a>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={toggleMenu}
+            className="ml-auto md:hidden text-navy p-2 rounded-md"
+            aria-label="Toggle menu"
+            aria-expanded={isMenuOpen}
+          >
+            <Menu size={24} />
+          </button>
         </div>
       </header>
 
-      {isMobile && isMenuOpen && (
-        <div className="fixed top-20 left-0 right-0 bg-white shadow-lg py-4 z-40">
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="fixed top-20 left-0 right-0 bg-white shadow-lg py-4 z-40 md:hidden">
           <nav className="container flex flex-col gap-4">
             <Link
               href="/"
