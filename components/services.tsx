@@ -25,7 +25,7 @@ const services = [
       </svg>
     ),
     slug: "roof-soft-wash",
-    image: "/Roof.jpg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Roof.jpg-7GiK0AyKqKkFAQJoVFxqIYbqeu6PbO.jpeg",
   },
   {
     name: "House Soft Wash",
@@ -82,7 +82,7 @@ const services = [
       </svg>
     ),
     slug: "gutter-cleaning",
-    image: "/Gutter.jpg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gutter.jpg-bFA29F1coFtrq5NX2CMasGgX9l6ciZ.jpeg",
   },
   {
     name: "Deck & Fence Cleaning",
@@ -106,7 +106,7 @@ const services = [
       </svg>
     ),
     slug: "deck-fence-cleaning",
-    image: "/Deck&Fence.png",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Deck%26Fence-IeCszb8eOs8tR31fbArxUVKfWe02q0.png",
   },
 ]
 
@@ -122,7 +122,10 @@ const ServiceCard = ({ service }: { service: (typeof services)[0] }) => (
       <p className="text-sm">{service.desc}</p>
     </div>
     <div className="relative z-10 p-4 text-center">
-      <Link href="#contact" className="font-semibold hover:text-cyan transition-colors inline-flex items-center gap-1">
+      <Link
+        href={service.slug === "roof-soft-wash" ? "/services/roof-soft-wash" : "#contact"}
+        className="font-semibold hover:text-cyan transition-colors inline-flex items-center gap-1"
+      >
         <span>Learn More</span>
         <ArrowRight size={16} />
       </Link>

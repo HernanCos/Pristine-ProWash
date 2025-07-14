@@ -70,21 +70,18 @@ const galleryItems = [
     afterImage: "/images/roof-after.png",
     alt: "Roof soft washing before and after showing moss and algae removal",
     caption: "Roof Soft Washing",
-    positionClasses: "lg:absolute lg:top-0 lg:left-0 lg:w-[45%] lg:rotate-[-3deg]",
   },
   {
     beforeImage: "/images/gutter-before.png",
     afterImage: "/images/gutter-after.png",
     alt: "Gutter cleaning before and after showing debris removal and brightening",
     caption: "Gutter Cleaning & Brightening",
-    positionClasses: "lg:absolute lg:bottom-0 lg:left-1/2 lg:-translate-x-1/2 lg:w-[45%] z-10",
   },
   {
     beforeImage: "/images/driveway-before.png",
     afterImage: "/images/driveway-after.jpg",
     alt: "Driveway cleaning before and after showing oil stain removal",
     caption: "Driveway & Concrete Cleaning",
-    positionClasses: "lg:absolute lg:top-[15%] lg:right-0 lg:w-[45%] lg:rotate-[2deg]",
   },
 ]
 
@@ -94,13 +91,11 @@ export default function Gallery() {
       <div className="container">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-navy">Mini Gallery</h2>
 
-        <div className="relative h-auto lg:h-[750px] flex flex-col lg:block gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {galleryItems.map((item) => (
-            <div key={item.caption} className={item.positionClasses}>
-              <div className="space-y-3">
-                <BeforeAfterSlider beforeImage={item.beforeImage} afterImage={item.afterImage} alt={item.alt} />
-                <p className="text-center text-gray-600 text-base">{item.caption}</p>
-              </div>
+            <div key={item.caption} className="space-y-3">
+              <BeforeAfterSlider beforeImage={item.beforeImage} afterImage={item.afterImage} alt={item.alt} />
+              <p className="text-center text-gray-600 text-base">{item.caption}</p>
             </div>
           ))}
         </div>

@@ -3,10 +3,11 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Menu } from "lucide-react"
+import { Menu, ChevronDown } from "lucide-react"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isServicesOpen, setIsServicesOpen] = useState(false)
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -25,9 +26,56 @@ export default function Header() {
             <Link href="/" className="hover:text-cyan transition-colors">
               Home
             </Link>
-            <Link href="#services" className="hover:text-cyan transition-colors">
-              Services
-            </Link>
+
+            {/* Services Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setIsServicesOpen(true)}
+              onMouseLeave={() => setIsServicesOpen(false)}
+            >
+              <button className="flex items-center gap-1 hover:text-cyan transition-colors py-2 px-1">
+                Services
+                <ChevronDown size={16} />
+              </button>
+
+              {isServicesOpen && (
+                <div className="absolute top-full left-0 pt-2 z-50">
+                  <div className="w-64 bg-white rounded-md shadow-lg border border-gray-200 py-2">
+                    <Link
+                      href="/services/roof-soft-wash"
+                      className="block px-4 py-2 text-navy hover:bg-gray-50 hover:text-cyan transition-colors"
+                    >
+                      Roof Soft Washing
+                    </Link>
+                    <Link
+                      href="#services"
+                      className="block px-4 py-2 text-navy hover:bg-gray-50 hover:text-cyan transition-colors"
+                    >
+                      House Soft Washing
+                    </Link>
+                    <Link
+                      href="#services"
+                      className="block px-4 py-2 text-navy hover:bg-gray-50 hover:text-cyan transition-colors"
+                    >
+                      Driveway & Concrete Cleaning
+                    </Link>
+                    <Link
+                      href="#services"
+                      className="block px-4 py-2 text-navy hover:bg-gray-50 hover:text-cyan transition-colors"
+                    >
+                      Gutter Cleaning & Brightening
+                    </Link>
+                    <Link
+                      href="#services"
+                      className="block px-4 py-2 text-navy hover:bg-gray-50 hover:text-cyan transition-colors"
+                    >
+                      Deck & Fence Cleaning
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
+
             <Link href="#gallery" className="hover:text-cyan transition-colors">
               Gallery
             </Link>
@@ -80,13 +128,46 @@ export default function Header() {
             >
               Home
             </Link>
-            <Link
-              href="#services"
-              className="text-navy hover:text-cyan transition-colors py-2"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Services
-            </Link>
+            <div className="py-2">
+              <div className="text-navy font-bold mb-2">Services</div>
+              <div className="pl-4 space-y-2">
+                <Link
+                  href="/services/roof-soft-wash"
+                  className="block text-navy hover:text-cyan transition-colors py-1"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Roof Soft Washing
+                </Link>
+                <Link
+                  href="#services"
+                  className="block text-navy hover:text-cyan transition-colors py-1"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  House Soft Washing
+                </Link>
+                <Link
+                  href="#services"
+                  className="block text-navy hover:text-cyan transition-colors py-1"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Driveway & Concrete Cleaning
+                </Link>
+                <Link
+                  href="#services"
+                  className="block text-navy hover:text-cyan transition-colors py-1"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Gutter Cleaning & Brightening
+                </Link>
+                <Link
+                  href="#services"
+                  className="block text-navy hover:text-cyan transition-colors py-1"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Deck & Fence Cleaning
+                </Link>
+              </div>
+            </div>
             <Link
               href="#gallery"
               className="text-navy hover:text-cyan transition-colors py-2"
