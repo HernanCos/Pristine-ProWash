@@ -48,13 +48,13 @@ export default function Header() {
                       Roof Soft Washing
                     </Link>
                     <Link
-                      href="#services"
+                      href="/services/house-soft-wash"
                       className="block px-4 py-2 text-navy hover:bg-gray-50 hover:text-cyan transition-colors"
                     >
                       House Soft Washing
                     </Link>
                     <Link
-                      href="#services"
+                      href="/services/driveway-concrete-cleaning"
                       className="block px-4 py-2 text-navy hover:bg-gray-50 hover:text-cyan transition-colors"
                     >
                       Driveway & Concrete Cleaning
@@ -139,14 +139,14 @@ export default function Header() {
                   Roof Soft Washing
                 </Link>
                 <Link
-                  href="#services"
+                  href="/services/house-soft-wash"
                   className="block text-navy hover:text-cyan transition-colors py-1"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   House Soft Washing
                 </Link>
                 <Link
-                  href="#services"
+                  href="/services/driveway-concrete-cleaning"
                   className="block text-navy hover:text-cyan transition-colors py-1"
                   onClick={() => setIsMenuOpen(false)}
                 >

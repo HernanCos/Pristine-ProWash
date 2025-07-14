@@ -57,7 +57,7 @@ const services = [
         <line x1="15" y1="3" x2="15" y2="21"></line>
       </svg>
     ),
-    slug: "driveway-cleaning",
+    slug: "driveway-concrete-cleaning",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Concrete2.jpg-7ju4Zs8kxzUpKxbxfIeNkEYwGmtNaV.jpeg",
   },
   {
@@ -123,7 +123,13 @@ const ServiceCard = ({ service }: { service: (typeof services)[0] }) => (
     </div>
     <div className="relative z-10 p-4 text-center">
       <Link
-        href={service.slug === "roof-soft-wash" ? "/services/roof-soft-wash" : "#contact"}
+        href={
+          service.slug === "roof-soft-wash" ||
+          service.slug === "house-soft-wash" ||
+          service.slug === "driveway-concrete-cleaning"
+            ? `/services/${service.slug}`
+            : "#contact"
+        }
         className="font-semibold hover:text-cyan transition-colors inline-flex items-center gap-1"
       >
         <span>Learn More</span>
