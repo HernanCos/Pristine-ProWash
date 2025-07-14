@@ -3,12 +3,18 @@
 import Image from "next/image"
 import QuoteForm from "@/components/quote-form"
 
-export default function DrivewayConcreteCleaning() {
+export default function GutterHero() {
   return (
     <section className="relative min-h-screen flex items-center">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <Image src="/images/driveway-hero.jpg" alt="Clean concrete driveway" fill className="object-cover" priority />
+        <Image
+          src="/images/gutter-hero.png"
+          alt="House with gutters needing cleaning"
+          fill
+          className="object-cover"
+          priority
+        />
         <div className="absolute inset-0 bg-black/40" />
       </div>
 
@@ -17,11 +23,11 @@ export default function DrivewayConcreteCleaning() {
         {/* Left Column - Hero Text */}
         <div className="text-white space-y-6">
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">
-            Protect Your Concrete Investment With Professional Cleaning
+            Prevent Water Damage With Safe, Effective Gutter Cleaning
           </h1>
           <p className="text-lg md:text-xl text-gray-200 leading-relaxed">
-            Safe, effective driveway and concrete cleaning to prevent damage, reduce stains, and instantly improve curb
-            appeal.
+            Protect your home with professional debris removal and gutter brightening, all without having to climb a
+            ladder.
           </p>
         </div>
 

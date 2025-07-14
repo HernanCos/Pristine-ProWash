@@ -6,36 +6,40 @@ export default function WhyHouseSoftWashing() {
       <div className="container">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-navy">Why House Soft Washing Exists</h2>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
-          <div className="relative h-96">
-            {/* Before image - positioned toward top-left */}
-            <div className="absolute top-0 left-0 w-48">
-              <h3 className="text-lg font-bold mb-2 text-navy text-center">Before</h3>
-              <div className="relative h-48 rounded-lg overflow-hidden shadow-lg">
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/HouseBefore1-UdzhK9YFWw1eKD6tXYXwqcIXOAgDHd.png"
-                  alt="House siding before soft washing showing dirt and stains"
-                  fill
-                  className="object-cover"
-                />
+        <div className="grid lg:grid-cols-5 gap-8 items-center">
+          {/* Left Column - Before/After Images Side by Side - Larger */}
+          <div className="lg:col-span-2">
+            <div className="grid grid-cols-2 gap-6">
+              {/* Before image - doubled size */}
+              <div>
+                <h3 className="text-lg font-bold mb-3 text-navy text-center">Before</h3>
+                <div className="relative h-96 rounded-lg overflow-hidden shadow-lg">
+                  <Image
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/HouseBefore1-UdzhK9YFWw1eKD6tXYXwqcIXOAgDHd.png"
+                    alt="House siding before soft washing showing dirt and stains"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </div>
-            </div>
 
-            {/* After image - positioned toward bottom-right */}
-            <div className="absolute bottom-0 right-0 w-48">
-              <h3 className="text-lg font-bold mb-2 text-navy text-center">After</h3>
-              <div className="relative h-48 rounded-lg overflow-hidden shadow-lg">
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/HouseAfter1-jXcC8GqmGWegSzkIrEn3wmt32eC3QG.png"
-                  alt="House siding after soft washing showing clean, restored appearance"
-                  fill
-                  className="object-cover"
-                />
+              {/* After image - doubled size */}
+              <div>
+                <h3 className="text-lg font-bold mb-3 text-navy text-center">After</h3>
+                <div className="relative h-96 rounded-lg overflow-hidden shadow-lg">
+                  <Image
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/HouseAfter1-jXcC8GqmGWegSzkIrEn3wmt32eC3QG.png"
+                    alt="House siding after soft washing showing clean, restored appearance"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="space-y-4 text-gray-700">
+          {/* Right Column - Text Content - Narrower and Further Right */}
+          <div className="lg:col-span-3 space-y-4 text-gray-700 lg:pl-12">
             <p>
               House soft washing was developed as a safer, more effective way to clean delicate exterior siding.
               High-pressure washing can strip paint, scar wood, and damage modern siding materials. Soft washing solves

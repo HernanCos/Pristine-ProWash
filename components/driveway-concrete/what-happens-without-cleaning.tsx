@@ -2,19 +2,19 @@ import Image from "next/image"
 
 export default function WhatHappensWithoutCleaning() {
   return (
-    <section className="py-16" style={{ backgroundColor: "#D1D5DB" }}>
+    <section className="py-16 bg-white">
       <div className="container">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-navy">
           What Happens When You Don't Wash Your Concrete
         </h2>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="relative h-80 md:h-[500px] rounded-lg overflow-hidden shadow-lg">
+          <div className="relative h-96">
             <Image
               src="/images/driveway-neglected.png"
-              alt="Severely neglected concrete driveway with cracks, stains, and moss growth"
+              alt="Neglected concrete showing damage and stains"
               fill
-              className="object-cover"
+              className="object-cover rounded-lg shadow-lg"
             />
           </div>
 

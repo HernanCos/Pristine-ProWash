@@ -4,6 +4,7 @@ import WhyRoofSoftWashing from "@/components/roof-soft-wash/why-roof-soft-washin
 import WhatHappensWithoutWashing from "@/components/roof-soft-wash/what-happens-without-washing"
 import HowPristineProWashDoesIt from "@/components/roof-soft-wash/how-pristine-prowash-does-it"
 import BeforeAfterGallery from "@/components/roof-soft-wash/before-after-gallery"
+import ServiceBundles from "@/components/roof-soft-wash/service-bundles"
 import RoofFAQ from "@/components/roof-soft-wash/roof-faq"
 import Contact from "@/components/contact"
 
@@ -21,6 +22,7 @@ export default function RoofSoftWashPage() {
       <WhatHappensWithoutWashing />
       <HowPristineProWashDoesIt />
       <BeforeAfterGallery />
+      <ServiceBundles />
       <RoofFAQ />
       <Contact />
     </main>

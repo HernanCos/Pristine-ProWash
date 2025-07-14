@@ -8,13 +8,13 @@ export default function WhyDrivewayCleaning() {
           Why Driveway & Concrete Cleaning Exists
         </h2>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="relative h-80 md:h-[500px] rounded-lg overflow-hidden shadow-lg">
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
+          <div className="relative h-96">
             <Image
               src="/images/driveway-before-after.png"
-              alt="Dramatic before and after comparison of driveway cleaning showing stained vs clean concrete"
+              alt="Driveway before and after cleaning comparison"
               fill
-              className="object-cover"
+              className="object-cover rounded-lg shadow-lg"
             />
           </div>
 

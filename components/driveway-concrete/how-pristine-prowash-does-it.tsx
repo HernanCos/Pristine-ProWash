@@ -7,6 +7,15 @@ export default function HowPristineProWashDoesIt() {
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-navy">How Pristine ProWash Does It</h2>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="relative h-96">
+            <Image
+              src="/images/driveway-action.png"
+              alt="Professional driveway cleaning in action"
+              fill
+              className="object-cover rounded-lg shadow-lg"
+            />
+          </div>
+
           <div className="space-y-4 text-gray-700">
             <p>
               Our driveway cleaning service starts with a surface inspection, checking for stains, moss patches, and
@@ -24,15 +33,6 @@ export default function HowPristineProWashDoesIt() {
               driveway size and condition. Every job includes before-and-after photos and safe, environmentally
               responsible cleaning practices that extend the life of your concrete.
             </p>
-          </div>
-
-          <div className="relative h-80 md:h-[500px] rounded-lg overflow-hidden shadow-lg">
-            <Image
-              src="/images/driveway-action.png"
-              alt="Professional driveway cleaning service in action showing surface cleaning equipment and technique"
-              fill
-              className="object-cover"
-            />
           </div>
         </div>
       </div>

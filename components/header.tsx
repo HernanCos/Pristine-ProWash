@@ -60,13 +60,13 @@ export default function Header() {
                       Driveway & Concrete Cleaning
                     </Link>
                     <Link
-                      href="#services"
+                      href="/services/gutter-cleaning"
                       className="block px-4 py-2 text-navy hover:bg-gray-50 hover:text-cyan transition-colors"
                     >
                       Gutter Cleaning & Brightening
                     </Link>
                     <Link
-                      href="#services"
+                      href="/services/deck-fence-cleaning"
                       className="block px-4 py-2 text-navy hover:bg-gray-50 hover:text-cyan transition-colors"
                     >
                       Deck & Fence Cleaning
@@ -153,14 +153,14 @@ export default function Header() {
                   Driveway & Concrete Cleaning
                 </Link>
                 <Link
-                  href="#services"
+                  href="/services/gutter-cleaning"
                   className="block text-navy hover:text-cyan transition-colors py-1"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Gutter Cleaning & Brightening
                 </Link>
                 <Link
-                  href="#services"
+                  href="/services/deck-fence-cleaning"
                   className="block text-navy hover:text-cyan transition-colors py-1"
                   onClick={() => setIsMenuOpen(false)}
                 >

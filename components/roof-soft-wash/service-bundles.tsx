@@ -1,4 +1,4 @@
-import { RoofIcon, GutterIcon, DrivewayConcretIcon, DeckFenceIcon } from "@/components/service-icons"
+import { HouseIcon, GutterIcon, DrivewayConcretIcon, DeckFenceIcon } from "@/components/service-icons"
 
 export default function ServiceBundles() {
   return (
@@ -6,21 +6,21 @@ export default function ServiceBundles() {
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
-            Refresh Your Entire Home Exterior and Save 15%
+            Get a 15% Discount When You Combine Roof Cleaning With Other Services
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Pair house soft washing with deck cleaning or driveway cleaning to brighten your home's appearance in one
-            visit. Many homeowners also bundle with roof or gutter cleaning for complete property care and receive 15%
-            off combined services.
+            Many homeowners schedule gutter cleaning alongside roof soft washing to improve drainage and prevent moss
+            from returning. You can also combine with house washing, driveway, or deck cleaning for a full home refresh
+            and save 15% when bundling.
           </p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
           <div className="text-center">
             <div className="flex justify-center mb-4">
-              <RoofIcon />
+              <HouseIcon />
             </div>
-            <h3 className="font-semibold text-navy">Roof Soft Washing</h3>
+            <h3 className="font-semibold text-navy">House Soft Washing</h3>
           </div>
 
           <div className="text-center">
