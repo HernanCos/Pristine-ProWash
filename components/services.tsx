@@ -132,7 +132,7 @@ const ServiceCard = ({ service }: { service: (typeof services)[0] }) => (
 
 export default function Services() {
   return (
-    <section id="services" className="py-16 bg-darkband">
+    <section id="services" className="py-16" style={{ backgroundColor: "#D1D5DB" }}>
       <div className="container">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-navy">Our Services</h2>
 

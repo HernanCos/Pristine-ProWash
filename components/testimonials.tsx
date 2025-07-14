@@ -8,21 +8,21 @@ const testimonials = [
     id: 1,
     name: "Marcus Liu",
     location: "Portland, OR",
-    text: "I’ve hired pressure washers before but this was hands down the best service. Hernan took time to point out areas that needed extra attention. My concrete patio looks fantastic. I will be recommending him to neighbors.",
+    text: "I've hired pressure washers before but this was hands down the best service. Hernan took time to point out areas that needed extra attention. My concrete patio looks fantastic. I will be recommending him to neighbors.",
     rating: 5,
   },
   {
     id: 2,
     name: "Elaine Brooks",
     location: "Portland, OR",
-    text: "Hernan was friendly and professional. He explained the quote process clearly and showed up when he said he would. He cleaned my gutters and even unclogged a downspout. I feel confident they won’t overflow this season.",
+    text: "Hernan was friendly and professional. He explained the quote process clearly and showed up when he said he would. He cleaned my gutters and even unclogged a downspout. I feel confident they won't overflow this season.",
     rating: 5,
   },
   {
     id: 3,
     name: "Tyler Nguyen",
     location: "Portland, OR",
-    text: "As someone who cares about the environment, I appreciated Hernan’s gentle soft wash approach. He removed algae from my siding without any harsh chemicals and the results speak for themselves. I’ll definitely call him again.",
+    text: "As someone who cares about the environment, I appreciated Hernan's gentle soft wash approach. He removed algae from my siding without any harsh chemicals and the results speak for themselves. I'll definitely call him again.",
     rating: 5,
   },
   {
@@ -43,7 +43,7 @@ const testimonials = [
     id: 6,
     name: "Mia Alvarez",
     location: "Portland, OR",
-    text: "I booked Hernan on a Tuesday and he was at my house by Thursday morning. He walked me through what he’d do and got straight to work. My roof and gutters look like new. I’m really impressed.",
+    text: "I booked Hernan on a Tuesday and he was at my house by Thursday morning. He walked me through what he'd do and got straight to work. My roof and gutters look like new. I'm really impressed.",
     rating: 5,
   },
 ]
@@ -74,7 +74,7 @@ export default function Testimonials() {
   }, [isPaused, activeIndex])
 
   return (
-    <section className="py-16 bg-[#EAF0FA]">
+    <section className="py-16 bg-gray-100">
       <div className="container">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-navy">What Our Customers Say</h2>
 

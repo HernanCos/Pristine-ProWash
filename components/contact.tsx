@@ -53,7 +53,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="section-padding bg-darkband">
+    <section id="contact" className="py-16" style={{ backgroundColor: "#D1D5DB" }}>
       <div className="container">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-navy">Contact Us</h2>
 
@@ -63,19 +63,6 @@ export default function Contact() {
 
             {/* Quote Request Form */}
             <div className="p-6 rounded-lg shadow-lg bg-gray-50">
-              {/* 
-                FORM SETUP INSTRUCTIONS:
-                
-                For Webflow hosting:
-                - Ensure form has: method="post" data-name="Quote Request Form" id="quote-form" name="wf-form-Quote-Request-Form"
-                - Go to Webflow Dashboard → Forms → set recipient to: info@pristineprowash.net
-                - If no emails received, upgrade to paid Site Plan or connect Zapier > Email by Zapier
-                
-                For external hosting:
-                - Sign up free at Formspree.io
-                - Replace 'yourFormID' below with actual Formspree form ID
-                - Verify recipient address = info@pristineprowash.net
-              */}
               <form onSubmit={handleSubmit} className="space-y-4" method="POST">
                 <input type="hidden" name="_subject" value="New Quote Request from PristineProWash" />
 
@@ -170,7 +157,7 @@ export default function Contact() {
 
                 <div>
                   <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-700">
-                    Additional Details
+                    Additional Details (Optional)
                   </label>
                   <textarea
                     id="message"
@@ -182,45 +169,6 @@ export default function Contact() {
                     placeholder="Tell us more about your needs..."
                     disabled={formState === "submitting"}
                   ></textarea>
-                </div>
-
-                <div>
-                  <label className="block mb-2 text-sm font-medium text-gray-700">Upload Photos (optional)</label>
-                  <div className="flex items-center justify-center w-full">
-                    <label
-                      htmlFor="dropzone-file"
-                      className="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-600 border-dashed rounded-lg cursor-pointer bg-white hover:bg-gray-100 border-gray-300"
-                    >
-                      <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                        <svg
-                          className="w-8 h-8 mb-4 text-gray-400"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 20 16"
-                        >
-                          <path
-                            stroke="currentColor"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
-                          />
-                        </svg>
-                        <p className="mb-2 text-sm text-gray-500">
-                          <span className="font-semibold">Click to upload</span> or drag and drop
-                        </p>
-                        <p className="text-xs text-gray-500">PNG, JPG or JPEG (MAX. 5MB)</p>
-                      </div>
-                      <input
-                        id="dropzone-file"
-                        type="file"
-                        className="hidden"
-                        multiple
-                        disabled={formState === "submitting"}
-                      />
-                    </label>
-                  </div>
                 </div>
 
                 <button

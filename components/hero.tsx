@@ -1,21 +1,180 @@
+"use client"
+
+import type React from "react"
+
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 
 export default function Hero() {
+  const router = useRouter()
+  const [formState, setFormState] = useState<"idle" | "submitting" | "success" | "error">("idle")
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
+    service: "",
+    message: "",
+  })
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setFormState("submitting")
+
+    try {
+      const response = await fetch("/api/quote", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          _subject: "New Quote Request from PristineProWash",
+        }),
+      })
+
+      if (response.ok) {
+        router.push("/thankyou")
+      } else {
+        setFormState("error")
+      }
+    } catch (error) {
+      setFormState("error")
+    }
+  }
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }))
+  }
+
   return (
     <section
-      className="relative h-[60vh] min-h-[400px] md:h-screen bg-cover bg-center flex items-center justify-center text-white"
+      className="relative min-h-screen bg-cover bg-center flex items-center justify-center text-white"
       style={{ backgroundImage: "url('/Main.jpg')" }}
     >
       <div className="absolute inset-0 bg-black/50" />
-      <div className="relative z-10 text-center px-4">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4">Pristine ProWash</h1>
-        <p className="text-lg md:text-2xl mb-8 max-w-3xl mx-auto">
-          Top-Rated Pressure Washing & Exterior Cleaning in Your Area
-        </p>
-        <Button asChild size="lg" className="bg-cyan hover:bg-cyan/90 text-navy font-bold">
-          <Link href="#contact">Get a Free Quote</Link>
-        </Button>
+      <div className="relative z-10 container grid lg:grid-cols-2 gap-12 items-center">
+        {/* Left side - Heading and subheading */}
+        <div className="text-center lg:text-left">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Pristine ProWash</h1>
+          <p className="text-lg md:text-2xl mb-8 max-w-2xl">
+            Top-Rated Pressure Washing & Exterior Cleaning in Your Area
+          </p>
+          <div className="lg:hidden mb-8">
+            <Button asChild size="lg" className="bg-cyan hover:bg-cyan/90 text-navy font-bold">
+              <Link href="#contact">Get a Free Quote</Link>
+            </Button>
+          </div>
+        </div>
+
+        {/* Right side - Quote form */}
+        <div
+          className="p-6 rounded-lg shadow-lg text-white max-w-md mx-auto lg:mx-0"
+          style={{ backgroundColor: "rgba(63, 63, 70, 0.5)" }}
+        >
+          <h3 className="text-xl font-bold mb-4 text-white">Get a Free Quote</h3>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <input type="hidden" name="_subject" value="New Quote Request from PristineProWash" />
+
+            <div>
+              <label htmlFor="hero-name" className="block mb-1 text-sm font-medium text-gray-200">
+                Full Name
+              </label>
+              <input
+                type="text"
+                id="hero-name"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+                className="w-full p-3 rounded-md bg-white text-gray-900 border border-gray-300"
+                placeholder="Your name"
+                required
+                disabled={formState === "submitting"}
+              />
+            </div>
+
+            <div>
+              <label htmlFor="hero-email" className="block mb-1 text-sm font-medium text-gray-200">
+                Email Address
+              </label>
+              <input
+                type="email"
+                id="hero-email"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                className="w-full p-3 rounded-md bg-white text-gray-900 border border-gray-300"
+                placeholder="your@email.com"
+                required
+                disabled={formState === "submitting"}
+              />
+            </div>
+
+            <div>
+              <label htmlFor="hero-phone" className="block mb-1 text-sm font-medium text-gray-200">
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                id="hero-phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleInputChange}
+                className="w-full p-3 rounded-md bg-white text-gray-900 border border-gray-300"
+                placeholder="(555) 555-5555"
+                required
+                disabled={formState === "submitting"}
+              />
+            </div>
+
+            <div>
+              <label htmlFor="hero-service" className="block mb-1 text-sm font-medium text-gray-200">
+                Service Needed
+              </label>
+              <select
+                id="hero-service"
+                name="service"
+                value={formData.service}
+                onChange={handleInputChange}
+                className="w-full p-3 rounded-md bg-white text-gray-900 border border-gray-300"
+                required
+                disabled={formState === "submitting"}
+              >
+                <option value="">Select a service</option>
+                <option value="roof">Roof Soft Washing</option>
+                <option value="house">House Soft Washing</option>
+                <option value="driveway">Driveway & Concrete Cleaning</option>
+                <option value="gutter">Gutter Cleaning & Brightening</option>
+                <option value="deck">Deck & Fence Cleaning</option>
+                <option value="multiple">Multiple Services</option>
+              </select>
+            </div>
+
+            <button
+              type="submit"
+              className="w-full bg-cyan text-navy font-bold py-3 px-6 rounded-md transition-all duration-300 hover:bg-cyan/90 disabled:opacity-50 disabled:cursor-not-allowed"
+              disabled={formState === "submitting"}
+            >
+              {formState === "submitting" ? "Submitting..." : "Get Free Quote"}
+            </button>
+          </form>
+
+          {/* Error Message */}
+          {formState === "error" && (
+            <div className="mt-4 p-3 bg-red-100 text-red-800 rounded-lg text-center text-sm">
+              ⚠️ Something went wrong. Please try again or call{" "}
+              <a href="tel:9712806104" className="underline">
+                (971) 280-6104
+              </a>
+              .
+            </div>
+          )}
+        </div>
       </div>
     </section>
   )

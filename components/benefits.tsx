@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export default function Benefits() {
   return (
-    <section className="py-16 bg-gray-100">
+    <section className="py-16" style={{ backgroundColor: "#D1D5DB" }}>
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative h-80 md:h-[500px] rounded-lg overflow-hidden shadow-lg">

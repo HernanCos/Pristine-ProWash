@@ -7,12 +7,11 @@ import Benefits from "@/components/benefits"
 import WhyChooseUs from "@/components/why-choose-us"
 import Process from "@/components/process"
 import AboutUs from "@/components/about-us"
-import CtaBanner from "@/components/cta-banner"
 import Contact from "@/components/contact"
 
-export default function HomePage() {
+export default function Home() {
   return (
-    <>
+    <main>
       <Hero />
       <TrustBar />
       <Testimonials />
@@ -22,8 +21,7 @@ export default function HomePage() {
       <WhyChooseUs />
       <Process />
       <AboutUs />
-      <CtaBanner />
       <Contact />
-    </>
+    </main>
   )
 }

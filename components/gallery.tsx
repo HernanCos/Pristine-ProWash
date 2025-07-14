@@ -90,7 +90,7 @@ const galleryItems = [
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="py-16 bg-lightband overflow-hidden">
+    <section id="gallery" className="py-16 overflow-hidden bg-gray-100">
       <div className="container">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-navy">Mini Gallery</h2>
 

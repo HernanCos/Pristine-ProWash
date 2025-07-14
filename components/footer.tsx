@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export default function Footer() {
   return (
-    <footer className="bg-footer text-navy pt-12 pb-8">
+    <footer className="text-navy pt-12 pb-8" style={{ backgroundColor: "#E1E7ED" }}>
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 relative">
           <div className="mb-6 md:mb-0 flex flex-col items-center md:items-start relative">

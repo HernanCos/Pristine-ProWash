@@ -1,6 +1,6 @@
 export default function Process() {
   return (
-    <section className="section-padding bg-darkband">
+    <section className="py-16" style={{ backgroundColor: "#D1D5DB" }}>
       <div className="container">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-navy">Our Process</h2>
 
@@ -23,7 +23,7 @@ export default function Process() {
               <path d="M15 2v4" />
               <path d="m9 14 2 2 4-4" />
             </svg>
-            <h3 className="text-xl md:text-2xl font-bold mb-2 text-navy">1. Request Quote Online</h3>
+            <h3 className="text-xl md:text-2xl font-bold mb-2 text-navy">1. Request Quote</h3>
             <p className="text-gray-600 text-base">
               Fill out our simple form to get a detailed quote tailored to your specific needs.
             </p>
