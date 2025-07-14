@@ -1,6 +1,5 @@
 import Link from "next/link"
 import { ArrowRight, Home } from "lucide-react"
-import { cn } from "@/lib/utils"
 
 const services = [
   {
@@ -29,28 +28,11 @@ const services = [
     image: "/Roof.jpg",
   },
   {
-    name: "Gutter Cleaning & Brightening",
-    desc: "Debris removal, downspout flush, and oxidation rinse for like-new gutters.",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="32"
-        height="32"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="mb-4"
-      >
-        <path d="M4 5h16v4H4z" />
-        <path d="M12 9v5" />
-        <path d="M12 18a2 2 0 0 1-2-2c0-1.1.8-2 2-2s2 .9 2 2a2 2 0 0 1-2 2z" />
-      </svg>
-    ),
-    slug: "gutter-cleaning",
-    image: "/Gutter.jpg",
+    name: "House Soft Wash",
+    desc: "Gentle soft wash to remove dirt and mildew from all exterior surfaces.",
+    icon: <Home className="mb-4" size={32} />,
+    slug: "house-soft-wash",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/House.jpg-77nYd4w4gbBPlEbE69fem3YaYAjrRH.webp",
   },
   {
     name: "Driveway & Concrete Cleaning",
@@ -76,7 +58,31 @@ const services = [
       </svg>
     ),
     slug: "driveway-cleaning",
-    image: "/Driveway.jpg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Concrete2.jpg-7ju4Zs8kxzUpKxbxfIeNkEYwGmtNaV.jpeg",
+  },
+  {
+    name: "Gutter Cleaning & Brightening",
+    desc: "Debris removal, downspout flush, and oxidation rinse for like-new gutters.",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="mb-4"
+      >
+        <path d="M4 5h16v4H4z" />
+        <path d="M12 9v5" />
+        <path d="M12 18a2 2 0 0 1-2-2c0-1.1.8-2 2-2s2 .9 2 2a2 2 0 0 1-2 2z" />
+      </svg>
+    ),
+    slug: "gutter-cleaning",
+    image: "/Gutter.jpg",
   },
   {
     name: "Deck & Fence Cleaning",
@@ -102,47 +108,45 @@ const services = [
     slug: "deck-fence-cleaning",
     image: "/Deck&Fence.png",
   },
-  {
-    name: "House Soft Wash",
-    desc: "Gentle soft wash to remove dirt and mildew from all exterior surfaces.",
-    icon: <Home className="mb-4" size={32} />,
-    slug: "house-soft-wash",
-    image: "/House.jpg",
-  },
 ]
+
+const ServiceCard = ({ service }: { service: (typeof services)[0] }) => (
+  <div
+    className="relative bg-cover bg-center rounded-lg shadow-lg h-80 w-full max-w-xs flex flex-col justify-between text-white overflow-hidden"
+    style={{ backgroundImage: `url(${service.image})` }}
+  >
+    <div className="absolute inset-0 bg-black/40"></div>
+    <div className="relative z-10 p-6 flex flex-col items-center text-center flex-grow justify-center">
+      <div className="text-cyan">{service.icon}</div>
+      <h3 className="text-xl font-bold mb-3">{service.name}</h3>
+      <p className="text-sm">{service.desc}</p>
+    </div>
+    <div className="relative z-10 p-4 text-center">
+      <Link href="#contact" className="font-semibold hover:text-cyan transition-colors inline-flex items-center gap-1">
+        <span>Learn More</span>
+        <ArrowRight size={16} />
+      </Link>
+    </div>
+  </div>
+)
 
 export default function Services() {
   return (
-    <section id="services" className="section-padding bg-darkband">
+    <section id="services" className="py-16 bg-darkband">
       <div className="container">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">Our Services</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-navy">Our Services</h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-          {services.map((service) => (
-            <div
-              key={service.slug}
-              className={cn(
-                "relative bg-center rounded-lg shadow-lg h-80 flex flex-col justify-between text-white overflow-hidden",
-                service.slug === "driveway-cleaning" ? "bg-contain bg-no-repeat bg-gray-800" : "bg-cover",
-              )}
-              style={{ backgroundImage: `url(${service.image})` }}
-            >
-              <div className="absolute inset-0 bg-black/25"></div>
-              <div className="relative z-10 p-6 flex flex-col items-center text-center flex-grow justify-center">
-                <div className="text-cyan">{service.icon}</div>
-                <h3 className="text-xl font-bold mb-3">{service.name}</h3>
-                <p className="text-sm">{service.desc}</p>
-              </div>
-              <div className="relative z-10 p-4 text-center">
-                <Link
-                  href="#contact"
-                  className="font-semibold hover:text-cyan transition-colors inline-flex items-center gap-1"
-                >
-                  <span>Learn More</span>
-                  <ArrowRight size={16} />
-                </Link>
-              </div>
-            </div>
+        {/* First row - 3 cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center mb-8">
+          {services.slice(0, 3).map((service) => (
+            <ServiceCard key={service.slug} service={service} />
+          ))}
+        </div>
+
+        {/* Second row - 2 cards centered */}
+        <div className="flex flex-wrap justify-center gap-8">
+          {services.slice(3, 5).map((service) => (
+            <ServiceCard key={service.slug} service={service} />
           ))}
         </div>
       </div>

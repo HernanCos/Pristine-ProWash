@@ -6,37 +6,44 @@ import { Star, ChevronLeft, ChevronRight } from "lucide-react"
 const testimonials = [
   {
     id: 1,
-    name: "Sarah Johnson",
+    name: "Marcus Liu",
     location: "Portland, OR",
-    text: "Pristine ProWash completely transformed our home's exterior. The roof looks brand new, and they were able to remove years of grime from our driveway. Highly recommend!",
+    text: "I’ve hired pressure washers before but this was hands down the best service. Hernan took time to point out areas that needed extra attention. My concrete patio looks fantastic. I will be recommending him to neighbors.",
     rating: 5,
   },
   {
     id: 2,
-    name: "Michael Thompson",
-    location: "Eugene, OR",
-    text: "I was amazed at how quickly and efficiently they cleaned our gutters. The team was professional, and the results were outstanding. Our gutters look like they were just installed!",
+    name: "Elaine Brooks",
+    location: "Portland, OR",
+    text: "Hernan was friendly and professional. He explained the quote process clearly and showed up when he said he would. He cleaned my gutters and even unclogged a downspout. I feel confident they won’t overflow this season.",
     rating: 5,
   },
   {
     id: 3,
-    name: "Jennifer Davis",
+    name: "Tyler Nguyen",
     location: "Portland, OR",
-    text: "The oil stains on our driveway seemed impossible to remove, but Pristine ProWash made it look brand new. Great service and very reasonable pricing.",
+    text: "As someone who cares about the environment, I appreciated Hernan’s gentle soft wash approach. He removed algae from my siding without any harsh chemicals and the results speak for themselves. I’ll definitely call him again.",
     rating: 5,
   },
   {
     id: 4,
-    name: "Robert Wilson",
-    location: "Eugene, OR",
-    text: "Excellent service from start to finish. They were on time, professional, and did an amazing job on our roof. The moss is completely gone!",
+    name: "Priya Shah",
+    location: "Portland, OR",
+    text: "I love that Hernan uses plant safe products. He cleaned my deck and fence without any damage and left everything spotless. He checked in afterward to make sure I was happy. Highly recommended.",
     rating: 5,
   },
   {
     id: 5,
-    name: "Emily Martinez",
+    name: "Jorge Castillo",
     location: "Portland, OR",
-    text: "We've used several pressure washing companies in the past, but Pristine ProWash is by far the best. Their attention to detail and customer service is unmatched.",
+    text: "When I reached out, Hernan responded within minutes. He arrived exactly on time and tackled the mildew on my driveway in under an hour. He even shared tips on keeping it clean. Great experience.",
+    rating: 5,
+  },
+  {
+    id: 6,
+    name: "Mia Alvarez",
+    location: "Portland, OR",
+    text: "I booked Hernan on a Tuesday and he was at my house by Thursday morning. He walked me through what he’d do and got straight to work. My roof and gutters look like new. I’m really impressed.",
     rating: 5,
   },
 ]
@@ -64,12 +71,12 @@ export default function Testimonials() {
         clearInterval(intervalRef.current)
       }
     }
-  }, [isPaused])
+  }, [isPaused, activeIndex])
 
   return (
-    <section className="section-padding bg-gray-900">
+    <section className="py-16 bg-[#EAF0FA]">
       <div className="container">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">What Our Customers Say</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-navy">What Our Customers Say</h2>
 
         <div
           className="relative max-w-3xl mx-auto"
@@ -85,16 +92,16 @@ export default function Testimonials() {
             >
               {testimonials.map((testimonial) => (
                 <div key={testimonial.id} className="w-full flex-shrink-0 px-4">
-                  <div className="bg-charcoal p-6 md:p-8 rounded-lg shadow-lg">
+                  <div className="bg-white p-6 md:p-8 rounded-lg shadow-lg text-navy">
                     <div className="flex items-center mb-4">
                       {[...Array(testimonial.rating)].map((_, i) => (
                         <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                       ))}
                     </div>
-                    <p className="text-gray-300 italic mb-6">"{testimonial.text}"</p>
+                    <p className="text-gray-700 italic mb-6">"{testimonial.text}"</p>
                     <div>
                       <p className="font-bold">{testimonial.name}</p>
-                      <p className="text-gray-400 text-sm">{testimonial.location}</p>
+                      <p className="text-gray-500 text-sm">{testimonial.location}</p>
                     </div>
                   </div>
                 </div>
@@ -104,7 +111,7 @@ export default function Testimonials() {
 
           <button
             onClick={prevSlide}
-            className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 bg-charcoal p-2 rounded-full shadow-lg md:flex items-center justify-center hidden"
+            className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 bg-white p-2 rounded-full shadow-lg md:flex items-center justify-center hidden text-navy"
             aria-label="Previous testimonial"
           >
             <ChevronLeft className="h-6 w-6" />
@@ -112,7 +119,7 @@ export default function Testimonials() {
 
           <button
             onClick={nextSlide}
-            className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2 bg-charcoal p-2 rounded-full shadow-lg md:flex items-center justify-center hidden"
+            className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2 bg-white p-2 rounded-full shadow-lg md:flex items-center justify-center hidden text-navy"
             aria-label="Next testimonial"
           >
             <ChevronRight className="h-6 w-6" />
@@ -123,7 +130,7 @@ export default function Testimonials() {
               <button
                 key={index}
                 onClick={() => setActiveIndex(index)}
-                className={`w-3 h-3 rounded-full ${activeIndex === index ? "bg-cyan" : "bg-gray-600"}`}
+                className={`w-3 h-3 rounded-full ${activeIndex === index ? "bg-cyan" : "bg-gray-400"}`}
                 aria-label={`Go to testimonial ${index + 1}`}
               />
             ))}
