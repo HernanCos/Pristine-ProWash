@@ -50,14 +50,14 @@ export default function Services() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">
+            <Card key={index} className="bg-white overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
               <div className="relative h-48">
                 <Image src={service.image || "/placeholder.svg"} alt={service.title} fill className="object-cover" />
               </div>
-              <CardContent className="p-6">
+              <CardContent className="p-6 flex flex-col flex-grow">
                 <h3 className="text-xl font-bold text-navy mb-3">{service.title}</h3>
-                <p className="text-gray-600 mb-4">{service.description}</p>
-                <Button asChild className="w-full bg-cyan hover:bg-cyan/90 text-navy font-bold">
+                <p className="text-gray-600 mb-4 flex-grow">{service.description}</p>
+                <Button asChild className="w-full bg-cyan hover:bg-cyan/90 text-navy font-bold mt-auto">
                   <Link href={service.link}>Learn More</Link>
                 </Button>
               </CardContent>

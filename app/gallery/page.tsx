@@ -1,7 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
 import UnifiedGallery from "@/components/unified-gallery"
-import Footer from "@/components/footer"
 import { Button } from "@/components/ui/button"
 
 export default function GalleryPage() {
@@ -9,15 +8,14 @@ export default function GalleryPage() {
     <main>
       {/* Hero Section */}
       <section className="relative h-[50vh] flex items-center justify-center text-white">
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 bg-black">
           <Image
             src="/images/gallery.png"
             alt="Empty gallery frame with spotlights"
             fill
-            className="object-cover"
+            className="object-contain opacity-70"
             priority
           />
-          <div className="absolute inset-0 bg-black/60" />
         </div>
         <div className="relative z-10 text-center space-y-4 px-4">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">See the Pristine ProWash Difference</h1>
@@ -28,10 +26,10 @@ export default function GalleryPage() {
       </section>
 
       {/* Why Results Matter Section */}
-      <section className="py-16 bg-gray-100">
+      <section className="py-16 bg-gray-200">
         <div className="container text-center max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-navy mb-6">
-            More Than Curb Appeal—Protect Your Home Investment
+            More Than Curb Appeal Protect Your Home Investment
           </h2>
           <div className="space-y-4 text-navy/80 text-lg">
             <p>
@@ -59,8 +57,6 @@ export default function GalleryPage() {
           </Button>
         </div>
       </section>
-
-      <Footer />
     </main>
   )
 }

@@ -76,7 +76,7 @@ export default function Header() {
               )}
             </div>
 
-            <Link href="#gallery" className="hover:text-cyan transition-colors">
+            <Link href="/gallery" className="hover:text-cyan transition-colors">
               Gallery
             </Link>
             <Link href="#about" className="hover:text-cyan transition-colors">
@@ -169,7 +169,7 @@ export default function Header() {
               </div>
             </div>
             <Link
-              href="#gallery"
+              href="/gallery"
               className="text-navy hover:text-cyan transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
