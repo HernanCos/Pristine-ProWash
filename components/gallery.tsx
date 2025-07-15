@@ -101,8 +101,8 @@ export default function Gallery() {
         </div>
 
         <div className="mt-10 text-center">
-          <Link href="/portfolio" className="btn-primary inline-flex items-center gap-2">
-            <span>View Full Portfolio</span>
+          <Link href="/gallery" className="btn-primary inline-flex items-center gap-2">
+            <span>View Full Gallery</span>
             <ChevronRight size={18} />
           </Link>
         </div>

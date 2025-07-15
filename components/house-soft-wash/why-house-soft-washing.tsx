@@ -39,7 +39,7 @@ export default function WhyHouseSoftWashing() {
           </div>
 
           {/* Right Column - Text Content - Narrower and Further Right */}
-          <div className="lg:col-span-3 space-y-4 text-gray-700 lg:pl-20">
+          <div className="lg:col-span-3 space-y-4 text-gray-700 lg:pl-10">
             <p>
               House soft washing was developed as a safer, more effective way to clean delicate exterior siding.
               High-pressure washing can strip paint, scar wood, and damage modern siding materials. Soft washing solves

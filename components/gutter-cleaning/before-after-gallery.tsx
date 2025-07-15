@@ -1,38 +1,112 @@
+"use client"
+
+import { useState } from "react"
 import Image from "next/image"
-import { Card, CardContent } from "@/components/ui/card"
+import { ChevronLeft, ChevronRight } from "lucide-react"
+
+const galleryPairs = [
+  {
+    before: "/images/gutter-before.png",
+    after: "/images/gutter-after.png",
+    alt: "Gutter before and after cleaning",
+  },
+  {
+    before: "/images/gutter-gallery/GutterBefore1.png",
+    after: "/images/gutter-gallery/GutterAfter1.png",
+    alt: "Dirty gutter exterior before and after cleaning",
+  },
+  {
+    before: "/images/gutter-gallery/GutterBefore2.png",
+    after: "/images/gutter-gallery/GutterAfter2.png",
+    alt: "Gutter clogged with debris before and after cleaning",
+  },
+]
 
 export default function BeforeAfterGallery() {
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev === galleryPairs.length - 1 ? 0 : prev + 1))
+  }
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev === 0 ? galleryPairs.length - 1 : prev - 1))
+  }
+
   return (
     <section className="py-16" style={{ backgroundColor: "#D1D5DB" }}>
       <div className="container">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-navy">Before & After Gallery</h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          <Card>
-            <CardContent className="p-4">
-              <h3 className="text-xl font-semibold text-center mb-4 text-navy">Before</h3>
-              <div className="relative h-80">
-                <Image
-                  src="/images/gutter-before.png"
-                  alt="Gutter clogged with leaves and debris"
-                  fill
-                  className="object-cover rounded-md"
+
+        <div className="relative max-w-4xl mx-auto">
+          <div className="overflow-hidden rounded-lg">
+            <div
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            >
+              {galleryPairs.map((pair, index) => (
+                <div key={index} className="w-full flex-shrink-0">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <h3 className="text-lg font-bold mb-2 text-navy text-center">Before</h3>
+                      <div className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-lg">
+                        <Image
+                          src={pair.before || "/placeholder.svg"}
+                          alt={`Before: ${pair.alt}`}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold mb-2 text-navy text-center">After</h3>
+                      <div className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-lg">
+                        <Image
+                          src={pair.after || "/placeholder.svg"}
+                          alt={`After: ${pair.alt}`}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {galleryPairs.length > 1 && (
+            <>
+              <button
+                onClick={prevSlide}
+                className="absolute top-1/2 left-4 -translate-y-1/2 bg-white p-2 rounded-full shadow-lg hover:bg-gray-50 transition-colors"
+                aria-label="Previous image pair"
+              >
+                <ChevronLeft className="h-6 w-6 text-navy" />
+              </button>
+
+              <button
+                onClick={nextSlide}
+                className="absolute top-1/2 right-4 -translate-y-1/2 bg-white p-2 rounded-full shadow-lg hover:bg-gray-50 transition-colors"
+                aria-label="Next image pair"
+              >
+                <ChevronRight className="h-6 w-6 text-navy" />
+              </button>
+            </>
+          )}
+
+          {galleryPairs.length > 1 && (
+            <div className="flex justify-center mt-6 gap-2">
+              {galleryPairs.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`w-3 h-3 rounded-full ${currentIndex === index ? "bg-cyan" : "bg-gray-400"}`}
+                  aria-label={`Go to image pair ${index + 1}`}
                 />
-              </div>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardContent className="p-4">
-              <h3 className="text-xl font-semibold text-center mb-4 text-navy">After</h3>
-              <div className="relative h-80">
-                <Image
-                  src="/images/gutter-after.png"
-                  alt="Clean and clear gutter after professional cleaning"
-                  fill
-                  className="object-cover rounded-md"
-                />
-              </div>
-            </CardContent>
-          </Card>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>

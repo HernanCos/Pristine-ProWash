@@ -6,6 +6,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
+import Image from "next/image"
 
 export default function Hero() {
   const router = useRouter()
@@ -53,16 +54,23 @@ export default function Hero() {
   }
 
   return (
-    <section
-      className="relative min-h-screen bg-cover bg-center flex items-center justify-center text-white"
-      style={{ backgroundImage: "url('/Main.jpg')" }}
-    >
-      <div className="absolute inset-0 bg-black/50" />
-      <div className="relative z-10 container grid lg:grid-cols-2 gap-12 items-center">
+    <section className="relative min-h-screen flex items-center">
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/Main.jpg"
+          alt="Pristine ProWash background image of a clean house exterior"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/50" />
+      </div>
+
+      <div className="container relative z-10 grid lg:grid-cols-2 gap-12 items-center">
         {/* Left side - Heading and subheading */}
-        <div className="text-center lg:text-left">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Pristine ProWash</h1>
-          <p className="text-lg md:text-2xl mb-8 max-w-2xl">
+        <div className="text-white text-center lg:text-left lg:pl-8">
+          <h1 className="text-4xl md:text-5xl lg:text-[3.2rem] font-bold mb-4 leading-tight">Pristine ProWash</h1>
+          <p className="text-xl md:text-2xl lg:text-3xl mb-8 max-w-2xl">
             Top-Rated Pressure Washing & Exterior Cleaning in Your Area
           </p>
           <div className="lg:hidden mb-8">
@@ -164,7 +172,6 @@ export default function Hero() {
             </button>
           </form>
 
-          {/* Error Message */}
           {formState === "error" && (
             <div className="mt-4 p-3 bg-red-100 text-red-800 rounded-lg text-center text-sm">
               ⚠️ Something went wrong. Please try again or call{" "}

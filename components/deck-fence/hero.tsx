@@ -15,7 +15,7 @@ export default function DeckFenceHero() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/50" />
       </div>
 
       {/* Content */}

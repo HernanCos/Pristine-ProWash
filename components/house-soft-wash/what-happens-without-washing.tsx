@@ -11,7 +11,7 @@ export default function WhatHappensWithoutWashing() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative h-80 md:h-[500px] rounded-lg overflow-hidden shadow-lg">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/HouseNeglected.jpg-lN3xLjNuwhdCVNcttHnzoNMSuC5xPo.jpeg"
+              src="/images/HouseNeglected1.jpg"
               alt="Neglected house siding showing severe algae, mildew, and staining"
               fill
               className="object-cover"
