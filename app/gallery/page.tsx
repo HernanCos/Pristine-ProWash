@@ -10,10 +10,10 @@ export default function GalleryPage() {
       <section className="relative h-[50vh] flex items-center justify-center text-white">
         <div className="absolute inset-0 z-0 bg-black">
           <Image
-            src="/images/gallery.png"
-            alt="Empty gallery frame with spotlights"
+            src="/images/GalleryBackground.jpg"
+            alt="An art gallery with three large framed photos on a gray wall"
             fill
-            className="object-contain opacity-70"
+            className="object-cover opacity-70"
             priority
           />
         </div>
@@ -27,9 +27,9 @@ export default function GalleryPage() {
 
       {/* Why Results Matter Section */}
       <section className="py-16 bg-gray-200">
-        <div className="container text-center max-w-4xl mx-auto">
+        <div className="container text-center max-w-4xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-navy mb-6">
-            More Than Curb Appeal Protect Your Home Investment
+            More Than Curb Appeal: Protect Your Home Investment
           </h2>
           <div className="space-y-4 text-navy/80 text-lg">
             <p>
