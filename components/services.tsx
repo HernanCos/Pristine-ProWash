@@ -38,7 +38,7 @@ export default function Services() {
   ]
 
   return (
-    <section className="py-16 bg-gray-100">
+    <section className="py-16" style={{ backgroundColor: "#D1D5DB" }}>
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">Our Services</h2>

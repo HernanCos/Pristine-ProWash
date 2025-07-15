@@ -3,6 +3,7 @@ import Hero from "@/components/driveway-concrete/hero"
 import WhyDrivewayCleaning from "@/components/driveway-concrete/why-driveway-cleaning"
 import WhatHappensWithoutCleaning from "@/components/driveway-concrete/what-happens-without-cleaning"
 import HowPristineProWashDoesIt from "@/components/driveway-concrete/how-pristine-prowash-does-it"
+import BeforeAfterGallery from "@/components/driveway-concrete/before-after-gallery"
 import ServiceBundles from "@/components/driveway-concrete/service-bundles"
 import DrivewayFAQ from "@/components/driveway-concrete/driveway-faq"
 import Contact from "@/components/contact"
@@ -20,6 +21,7 @@ export default function DrivewayConcreteCleaningPage() {
       <WhyDrivewayCleaning />
       <WhatHappensWithoutCleaning />
       <HowPristineProWashDoesIt />
+      <BeforeAfterGallery />
       <ServiceBundles />
       <DrivewayFAQ />
       <Contact />

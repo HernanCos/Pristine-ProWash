@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export default function WhatHappensWithoutCleaning() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16" style={{ backgroundColor: "#D1D5DB" }}>
       <div className="container">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-navy">
           What Happens When You Don't Wash Your Concrete

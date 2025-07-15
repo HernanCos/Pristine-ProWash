@@ -5,10 +5,10 @@ export default function ServiceBundles() {
     <section className="py-16 bg-white">
       <div className="container">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-navy mb-4">
             Save 15% When You Bundle Gutter Cleaning With Other Services
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base text-gray-600 max-w-3xl mx-auto">
             Gutter cleaning pairs well with roof soft washing to protect against water damage and moss. Many homeowners
             also bundle with house washing or driveway cleaning for a fresh, clean look and save 15% on combined
             services.

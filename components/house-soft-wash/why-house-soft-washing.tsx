@@ -13,7 +13,7 @@ export default function WhyHouseSoftWashing() {
               {/* Before image - doubled size */}
               <div>
                 <h3 className="text-lg font-bold mb-3 text-navy text-center">Before</h3>
-                <div className="relative h-96 rounded-lg overflow-hidden shadow-lg">
+                <div className="relative h-[450px] rounded-lg overflow-hidden shadow-lg">
                   <Image
                     src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/HouseBefore1-UdzhK9YFWw1eKD6tXYXwqcIXOAgDHd.png"
                     alt="House siding before soft washing showing dirt and stains"
@@ -26,7 +26,7 @@ export default function WhyHouseSoftWashing() {
               {/* After image - doubled size */}
               <div>
                 <h3 className="text-lg font-bold mb-3 text-navy text-center">After</h3>
-                <div className="relative h-96 rounded-lg overflow-hidden shadow-lg">
+                <div className="relative h-[450px] rounded-lg overflow-hidden shadow-lg">
                   <Image
                     src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/HouseAfter1-jXcC8GqmGWegSzkIrEn3wmt32eC3QG.png"
                     alt="House siding after soft washing showing clean, restored appearance"
@@ -39,7 +39,7 @@ export default function WhyHouseSoftWashing() {
           </div>
 
           {/* Right Column - Text Content - Narrower and Further Right */}
-          <div className="lg:col-span-3 space-y-4 text-gray-700 lg:pl-12">
+          <div className="lg:col-span-3 space-y-4 text-gray-700 lg:pl-20">
             <p>
               House soft washing was developed as a safer, more effective way to clean delicate exterior siding.
               High-pressure washing can strip paint, scar wood, and damage modern siding materials. Soft washing solves

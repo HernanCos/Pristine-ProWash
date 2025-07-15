@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import DeckFenceHero from "@/components/deck-fence/hero"
 import WhyDeckFenceCleaning from "@/components/deck-fence/why-deck-fence-cleaning"
 import HowPristineProWashDoesIt from "@/components/deck-fence/how-pristine-prowash-does-it"
+import BeforeAfterGallery from "@/components/deck-fence/before-after-gallery"
 import ServiceBundles from "@/components/deck-fence/service-bundles"
 import DeckFenceFAQ from "@/components/deck-fence/deck-fence-faq"
 import Contact from "@/components/contact"
@@ -19,6 +20,7 @@ export default function DeckFenceCleaningPage() {
       <DeckFenceHero />
       <WhyDeckFenceCleaning />
       <HowPristineProWashDoesIt />
+      <BeforeAfterGallery />
       <ServiceBundles />
       <DeckFenceFAQ />
       <Contact />

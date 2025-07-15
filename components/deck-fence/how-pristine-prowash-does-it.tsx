@@ -7,15 +7,6 @@ export default function HowPristineProWashDoesIt() {
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-navy">How Pristine ProWash Does It</h2>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="relative h-96">
-            <Image
-              src="/images/deck-action.jpg"
-              alt="Professional deck cleaning showing before and after results"
-              fill
-              className="object-cover rounded-lg shadow-lg"
-            />
-          </div>
-
           <div className="space-y-4 text-gray-700">
             <p>
               Every deck and fence cleaning project begins with a full inspection of your outdoor wood surfaces. We take
@@ -39,6 +30,14 @@ export default function HowPristineProWashDoesIt() {
               photo documentation, careful property care, and noticeable improvements in both appearance and lifespan of
               your outdoor spaces.
             </p>
+          </div>
+          <div className="relative h-96">
+            <Image
+              src="/images/deck-action.jpg"
+              alt="Professional deck cleaning showing before and after results"
+              fill
+              className="object-cover rounded-lg shadow-lg"
+            />
           </div>
         </div>
       </div>

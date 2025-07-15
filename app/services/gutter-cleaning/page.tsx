@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import GutterHero from "@/components/gutter-cleaning/hero"
 import WhyGutterCleaning from "@/components/gutter-cleaning/why-gutter-cleaning"
 import HowPristineProWashDoesIt from "@/components/gutter-cleaning/how-pristine-prowash-does-it"
+import BeforeAfterGallery from "@/components/gutter-cleaning/before-after-gallery"
 import ServiceBundles from "@/components/gutter-cleaning/service-bundles"
 import GutterFAQ from "@/components/gutter-cleaning/gutter-faq"
 import Contact from "@/components/contact"
@@ -20,6 +21,7 @@ export default function GutterCleaningPage() {
       <GutterHero />
       <WhyGutterCleaning />
       <HowPristineProWashDoesIt />
+      <BeforeAfterGallery />
       <ServiceBundles />
       <GutterFAQ />
       <Contact />
