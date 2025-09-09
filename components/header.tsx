@@ -15,7 +15,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-0 inset-x-0 z-50 bg-darkband h-20 flex items-center shadow-sm">
+      <header className="fixed top-0 inset-x-0 z-50 bg-darkband h-20 flex items-center">
         <div className="container flex items-center h-full">
           <Link href="/" className="flex items-center" aria-label="Back to homepage">
             <Image src="/LOGO.png" alt="Pristine ProWash logo" width={90} height={90} priority />
@@ -79,7 +79,7 @@ export default function Header() {
             <Link href="/gallery" className="hover:text-cyan transition-colors">
               Gallery
             </Link>
-            <Link href="#about" className="hover:text-cyan transition-colors">
+            <Link href="/about" className="hover:text-cyan transition-colors">
               About
             </Link>
             <Link href="#contact" className="hover:text-cyan transition-colors">
@@ -176,7 +176,7 @@ export default function Header() {
               Gallery
             </Link>
             <Link
-              href="#about"
+              href="/about"
               className="text-navy hover:text-cyan transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >

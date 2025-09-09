@@ -48,7 +48,7 @@ export default function GalleryPage() {
       <UnifiedGallery />
 
       {/* Call to Action Banner */}
-      <section className="py-16" style={{ backgroundColor: "#E1E7ED" }}>
+      <section className="py-16" style={{ backgroundColor: "var(--section-light)" }}>
         <div className="container text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">Ready for Your Own Transformation?</h2>
           <p className="text-lg text-navy/80 mb-8">Get a fast, free quote from Pristine ProWash today.</p>
