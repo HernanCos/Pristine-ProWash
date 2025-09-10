@@ -17,7 +17,7 @@ export default function AboutPage() {
           />
         </div>
         <div className="relative z-10 text-center space-y-4 px-4">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">About Hernan</h1>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">About Me</h1>
           <p className="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto">
             Student-run business built on attention to detail and pride in work
           </p>
@@ -143,11 +143,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-navy">
+      {/* CTA Section - Changed to lighter gray */}
+      <section className="py-16" style={{ backgroundColor: "var(--section-light)" }}>
         <div className="container text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Get Started?</h2>
-          <p className="text-lg text-gray-200 mb-8">Let's make your place look pristine again.</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">Ready to Get Started?</h2>
+          <p className="text-lg text-gray-700 mb-8">Let's make your place look pristine again.</p>
           <Button asChild size="lg" className="bg-cyan hover:bg-cyan/90 text-navy font-bold">
             <Link href="/#contact">Get a Free Quote</Link>
           </Button>
