@@ -38,26 +38,29 @@ export default function Services() {
   ]
 
   return (
-    <section className="py-16" style={{ backgroundColor: "#D1D5DB" }}>
-      <div className="container">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">Our Services</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+    <section className="py-6 md:py-16" style={{ backgroundColor: "#D1D5DB" }}>
+      <div className="container px-2 md:px-4">
+        <div className="text-center mb-4 md:mb-12">
+          <h2 className="text-lg md:text-4xl font-bold text-navy mb-2 md:mb-4">Our Services</h2>
+          <p className="text-sm md:text-lg text-gray-600 max-w-2xl mx-auto">
             Professional exterior cleaning services designed for Portland's unique climate and your home's specific
             needs.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8">
           {services.map((service, index) => (
             <Card key={index} className="bg-white overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
-              <div className="relative h-48">
+              <div className="relative h-24 md:h-48">
                 <Image src={service.image || "/placeholder.svg"} alt={service.title} fill className="object-cover" />
               </div>
-              <CardContent className="p-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold text-navy mb-3">{service.title}</h3>
-                <p className="text-gray-600 mb-4 flex-grow">{service.description}</p>
-                <Button asChild className="w-full bg-cyan hover:bg-cyan/90 text-navy font-bold mt-auto">
+              <CardContent className="p-3 md:p-6 flex flex-col flex-grow">
+                <h3 className="text-sm md:text-xl font-bold text-navy mb-2 md:mb-3">{service.title}</h3>
+                <p className="text-xs md:text-base text-gray-600 mb-2 md:mb-4 flex-grow">{service.description}</p>
+                <Button
+                  asChild
+                  className="w-full bg-cyan hover:bg-cyan/90 text-navy font-bold mt-auto text-xs md:text-base py-2 md:py-3 px-3 md:px-6"
+                >
                   <Link href={service.link}>Learn More</Link>
                 </Button>
               </CardContent>
