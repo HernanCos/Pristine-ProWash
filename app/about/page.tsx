@@ -33,9 +33,9 @@ export default function AboutPage() {
             {/* Left Column - Story with image */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-navy mb-6">My Story</h2>
+                <h2 className="text-2xl md:text-3xl font-semibold text-navy mb-6">My Story</h2>
                 <div className="w-20 h-1 bg-cyan mb-8"></div>
-                <div className="space-y-6 text-gray-700 leading-relaxed text-lg">
+                <div className="space-y-6 text-gray-700 leading-relaxed text-base">
                   <p>
                     I grew up in Mexico City and moved to Portland when I was 11. New city, new language, same lesson I
                     learned at home: pay attention to details and take pride in your work.
@@ -72,9 +72,9 @@ export default function AboutPage() {
                 />
               </div>
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-navy mb-6">What Drives Me</h2>
+                <h2 className="text-2xl md:text-3xl font-semibold text-navy mb-6">What Drives Me</h2>
                 <div className="w-20 h-1 bg-cyan mb-8"></div>
-                <div className="space-y-6 text-gray-700 leading-relaxed text-lg">
+                <div className="space-y-6 text-gray-700 leading-relaxed text-base">
                   <p>
                     What I like most is the moment you step back and see a surface come back to life. Clean edges, even
                     lines, and no mess left behind. That part never gets old.
@@ -95,9 +95,9 @@ export default function AboutPage() {
       <section className="py-20" style={{ backgroundColor: "var(--section-light)" }}>
         <div className="container max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-6">My Promise to You</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold text-navy mb-6">My Promise to You</h2>
             <div className="w-24 h-1 bg-cyan mx-auto mb-8"></div>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base text-gray-700 max-w-2xl mx-auto">
               Three core commitments that define every job I take on
             </p>
           </div>
@@ -113,8 +113,8 @@ export default function AboutPage() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-navy">Clear & Reliable</h3>
-              <p className="text-gray-700">Clear pricing, fast replies, and a set time when I arrive.</p>
+              <h3 className="text-xl md:text-2xl font-semibold text-navy">Clear & Reliable</h3>
+              <p className="text-base text-gray-700">Clear pricing, fast replies, and a set time when I arrive.</p>
             </div>
             <div className="text-center space-y-6 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
               <div className="w-16 h-16 bg-cyan/20 rounded-full flex items-center justify-center mx-auto">
@@ -127,8 +127,8 @@ export default function AboutPage() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-navy">Quality Work</h3>
-              <p className="text-gray-700">
+              <h3 className="text-xl md:text-2xl font-semibold text-navy">Quality Work</h3>
+              <p className="text-base text-gray-700">
                 Right tools, before and after photos, and attention to details people usually miss.
               </p>
             </div>
@@ -143,8 +143,10 @@ export default function AboutPage() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-navy">Satisfaction Guaranteed</h3>
-              <p className="text-gray-700">If something is not right, I fix it. No drama, just the standard.</p>
+              <h3 className="text-xl md:text-2xl font-semibold text-navy">Satisfaction Guaranteed</h3>
+              <p className="text-base text-gray-700">
+                If something is not right, I fix it. No drama, just the standard.
+              </p>
             </div>
           </div>
         </div>
@@ -156,16 +158,16 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8 text-gray-700 leading-relaxed">
               <div className="space-y-6">
-                <h2 className="text-3xl md:text-4xl font-bold text-navy">Local & Proud</h2>
+                <h2 className="text-2xl md:text-3xl font-semibold text-navy">Local & Proud</h2>
                 <div className="w-20 h-1 bg-cyan"></div>
-                <p className="text-xl">
+                <p className="text-base">
                   I am local. I learned to love rain, moss, and good coffee. On days off, I am usually outdoors or at a
                   Ducks game with friends. <span className="font-semibold text-navy">Go Ducks.</span>
                 </p>
               </div>
               <div className="border-t border-gray-200 pt-8 space-y-4">
-                <p className="text-xl font-semibold text-navy">Thanks for supporting a student-run business.</p>
-                <p className="text-xl">If you want your place to look new again, I am ready when you are.</p>
+                <p className="text-base font-semibold text-navy">Thanks for supporting a student-run business.</p>
+                <p className="text-base">If you want your place to look new again, I am ready when you are.</p>
               </div>
             </div>
             <div className="relative h-80 rounded-lg overflow-hidden shadow-lg">
@@ -184,13 +186,13 @@ export default function AboutPage() {
       <section className="py-20" style={{ backgroundColor: "var(--section-light)" }}>
         <div className="container text-center max-w-4xl mx-auto px-4">
           <div className="space-y-8">
-            <h2 className="text-4xl md:text-5xl font-bold text-navy">Ready to Get Started?</h2>
-            <p className="text-xl text-gray-700 max-w-2xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-semibold text-navy">Ready to Get Started?</h2>
+            <p className="text-base text-gray-700 max-w-2xl mx-auto">
               Let's make your place look pristine again. Get your free quote today and see the difference quality makes.
             </p>
             <div className="pt-4">
               <Button asChild size="lg" className="bg-cyan hover:bg-cyan/90 text-navy font-bold px-8 py-4 text-lg">
-                <Link href="/#contact">Get a Free Quote</Link>
+                <Link href="/contact">Get a Free Quote</Link>
               </Button>
             </div>
           </div>

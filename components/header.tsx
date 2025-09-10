@@ -15,7 +15,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-0 inset-x-0 z-50 h-20 flex items-center" style={{ backgroundColor: "#D1D5DB" }}>
+      <header className="fixed top-0 inset-x-0 z-50 h-20 flex items-center" style={{ backgroundColor: "#E1E7ED" }}>
         <div className="container flex items-center justify-between h-full">
           <div className="flex items-center">
             <Link href="/" className="flex items-center mr-8" aria-label="Back to homepage">

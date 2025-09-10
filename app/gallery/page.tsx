@@ -53,7 +53,7 @@ export default function GalleryPage() {
           <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">Ready for Your Own Transformation?</h2>
           <p className="text-lg text-navy/80 mb-8">Get a fast, free quote from Pristine ProWash today.</p>
           <Button asChild size="lg" className="bg-cyan hover:bg-cyan/90 text-navy font-bold">
-            <Link href="/#contact">Get a Free Quote</Link>
+            <Link href="/contact">Get a Free Quote</Link>
           </Button>
         </div>
       </section>
