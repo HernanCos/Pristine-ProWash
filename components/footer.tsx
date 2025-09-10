@@ -9,6 +9,7 @@ export default function Footer() {
           <div className="mb-6 md:mb-0 flex flex-col items-center md:items-start relative">
             <Link href="/" className="flex items-center gap-3 mb-4">
               <Image src="/LOGO.png" alt="Pristine ProWash logo" width={140} height={140} />
+              <Image src="/uo-logo.png" alt="University of Oregon logo" width={50} height={50} />
             </Link>
             <p className="text-navy/80 text-sm text-center md:text-left max-w-[320px]">
               Professional pressure-washing services for residential properties in Portland, Lake Oswego, and Eugene,

@@ -34,7 +34,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${montserrat.variable} ${openSans.variable} bg-page text-[#111]`}>
         <Header />
-        <main className="flex min-h-screen flex-col pt-[81px] bg-lightband">{children}</main>
+        <main className="flex min-h-screen flex-col pt-[78px] bg-lightband">{children}</main>
         <Footer />
         {/* Google tag (gtag.js) */}
         <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=AW-17289761916" />

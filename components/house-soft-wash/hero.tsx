@@ -57,7 +57,7 @@ export default function HouseSoftWashHero() {
     <section className="relative min-h-screen flex items-center -mt-px">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/House.jpg"
+          src="/house-hero.webp"
           alt="Professional house soft washing service in action"
           fill
           className="object-cover"

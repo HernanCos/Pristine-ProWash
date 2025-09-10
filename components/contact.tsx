@@ -196,14 +196,27 @@ export default function Contact() {
           <div>
             <h3 className="text-xl md:text-2xl font-bold mb-6 text-navy">Our Service Area</h3>
 
-            <div className="rounded-lg overflow-hidden shadow-lg mb-8 bg-gray-100">
-              <div className="relative h-[300px]">
-                <Image
-                  src="/images/map.png"
-                  alt="Service area map showing Portland and Eugene, Oregon with surrounding neighborhoods"
-                  fill
-                  className="object-cover"
-                />
+            <div className="space-y-4 mb-8">
+              <div className="rounded-lg overflow-hidden shadow-lg bg-gray-100">
+                <div className="relative h-[240px]">
+                  <Image
+                    src="/images/map.png"
+                    alt="Service area map showing Portland and Eugene, Oregon with surrounding neighborhoods"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+
+              <div className="rounded-lg overflow-hidden shadow-lg bg-gray-100">
+                <div className="relative h-[240px]">
+                  <Image
+                    src="/eugene-map.png"
+                    alt="Eugene area service map showing detailed coverage areas"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </div>
 

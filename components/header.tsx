@@ -15,105 +15,111 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-0 inset-x-0 z-50 bg-darkband h-20 flex items-center">
-        <div className="container flex items-center h-full">
-          <Link href="/" className="flex items-center" aria-label="Back to homepage">
-            <Image src="/LOGO.png" alt="Pristine ProWash logo" width={90} height={90} priority />
-          </Link>
-
-          {/* Desktop Navigation */}
-          <nav className="ml-8 hidden md:flex items-center gap-6 font-bold text-navy">
-            <Link href="/" className="hover:text-cyan transition-colors">
-              Home
+      <header className="fixed top-0 inset-x-0 z-50 h-20 flex items-center" style={{ backgroundColor: "#D1D5DB" }}>
+        <div className="container flex items-center justify-between h-full">
+          <div className="flex items-center">
+            <Link href="/" className="flex items-center mr-8" aria-label="Back to homepage">
+              <Image src="/LOGO.png" alt="Pristine ProWash logo" width={90} height={90} priority />
             </Link>
 
-            {/* Services Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setIsServicesOpen(true)}
-              onMouseLeave={() => setIsServicesOpen(false)}
-            >
-              <button className="flex items-center gap-1 hover:text-cyan transition-colors py-2 px-1">
-                Services
-                <ChevronDown size={16} />
-              </button>
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center gap-6 font-bold text-gray-900">
+              <Link href="/" className="hover:text-gray-700 transition-colors">
+                Home
+              </Link>
 
-              {isServicesOpen && (
-                <div className="absolute top-full left-0 pt-2 z-50">
-                  <div className="w-64 bg-white rounded-md shadow-lg border border-gray-200 py-2">
-                    <Link
-                      href="/services/roof-soft-wash"
-                      className="block px-4 py-2 text-navy hover:bg-gray-50 hover:text-cyan transition-colors"
-                    >
-                      Roof Soft Washing
-                    </Link>
-                    <Link
-                      href="/services/house-soft-wash"
-                      className="block px-4 py-2 text-navy hover:bg-gray-50 hover:text-cyan transition-colors"
-                    >
-                      House Soft Washing
-                    </Link>
-                    <Link
-                      href="/services/driveway-concrete-cleaning"
-                      className="block px-4 py-2 text-navy hover:bg-gray-50 hover:text-cyan transition-colors"
-                    >
-                      Driveway & Concrete Cleaning
-                    </Link>
-                    <Link
-                      href="/services/gutter-cleaning"
-                      className="block px-4 py-2 text-navy hover:bg-gray-50 hover:text-cyan transition-colors"
-                    >
-                      Gutter Cleaning & Brightening
-                    </Link>
-                    <Link
-                      href="/services/deck-fence-cleaning"
-                      className="block px-4 py-2 text-navy hover:bg-gray-50 hover:text-cyan transition-colors"
-                    >
-                      Deck & Fence Cleaning
-                    </Link>
+              {/* Services Dropdown */}
+              <div
+                className="relative"
+                onMouseEnter={() => setIsServicesOpen(true)}
+                onMouseLeave={() => setIsServicesOpen(false)}
+              >
+                <button className="flex items-center gap-1 hover:text-gray-700 transition-colors py-2 px-1">
+                  Services
+                  <ChevronDown size={16} />
+                </button>
+
+                {isServicesOpen && (
+                  <div className="absolute top-full left-0 pt-2 z-50">
+                    <div className="w-64 bg-white rounded-md shadow-lg border border-gray-200 py-2">
+                      <Link
+                        href="/services/roof-soft-wash"
+                        className="block px-4 py-2 text-navy hover:bg-gray-50 hover:text-cyan transition-colors"
+                      >
+                        Roof Soft Washing
+                      </Link>
+                      <Link
+                        href="/services/house-soft-wash"
+                        className="block px-4 py-2 text-navy hover:bg-gray-50 hover:text-cyan transition-colors"
+                      >
+                        House Soft Washing
+                      </Link>
+                      <Link
+                        href="/services/driveway-concrete-cleaning"
+                        className="block px-4 py-2 text-navy hover:bg-gray-50 hover:text-cyan transition-colors"
+                      >
+                        Driveway & Concrete Cleaning
+                      </Link>
+                      <Link
+                        href="/services/gutter-cleaning"
+                        className="block px-4 py-2 text-navy hover:bg-gray-50 hover:text-cyan transition-colors"
+                      >
+                        Gutter Cleaning & Brightening
+                      </Link>
+                      <Link
+                        href="/services/deck-fence-cleaning"
+                        className="block px-4 py-2 text-navy hover:bg-gray-50 hover:text-cyan transition-colors"
+                      >
+                        Deck & Fence Cleaning
+                      </Link>
+                    </div>
                   </div>
-                </div>
-              )}
-            </div>
+                )}
+              </div>
 
-            <Link href="/gallery" className="hover:text-cyan transition-colors">
-              Gallery
-            </Link>
-            <Link href="/about" className="hover:text-cyan transition-colors">
-              About
-            </Link>
-            <Link href="#contact" className="hover:text-cyan transition-colors">
-              Contact
-            </Link>
-          </nav>
-          <div className="ml-auto hidden md:flex items-center gap-4">
-            <a
-              href="tel:9712806104"
-              className="text-navy hover:text-cyan transition-colors"
-              onClick={() => {
-                if (typeof window.gtag === "function") {
-                  window.gtag("event", "conversion", {
-                    send_to: "AW-17289761916/O-RxCOT-u-0aEPyos7RA",
-                  })
-                }
-              }}
-            >
-              (971) 280-6104
-            </a>
-            <a href="#contact" className="btn-primary">
-              Get a Free Quote
-            </a>
+              <Link href="/gallery" className="hover:text-gray-700 transition-colors">
+                Gallery
+              </Link>
+              <Link href="/about" className="hover:text-gray-700 transition-colors">
+                About
+              </Link>
+              <Link href="/contact" className="hover:text-gray-700 transition-colors">
+                Contact
+              </Link>
+            </nav>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={toggleMenu}
-            className="ml-auto md:hidden text-navy p-2 rounded-md"
-            aria-label="Toggle menu"
-            aria-expanded={isMenuOpen}
-          >
-            <Menu size={24} />
-          </button>
+          <div className="flex items-center gap-4">
+            <div className="hidden md:flex items-center gap-4">
+              <a
+                href="tel:9712806104"
+                className="text-gray-900 hover:text-gray-700 transition-colors"
+                onClick={() => {
+                  if (typeof window.gtag === "function") {
+                    window.gtag("event", "conversion", {
+                      send_to: "AW-17289761916/O-RxCOT-u-0aEPyos7RA",
+                    })
+                  }
+                }}
+              >
+                (971) 280-6104
+              </a>
+              <a href="/contact" className="btn-primary">
+                Get a Free Quote
+              </a>
+              <Image src="/uo-logo.png" alt="University of Oregon logo" width={40} height={40} className="ml-2" />
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={toggleMenu}
+              className="md:hidden text-gray-900 p-2 rounded-md"
+              aria-label="Toggle menu"
+              aria-expanded={isMenuOpen}
+            >
+              <Menu size={24} />
+            </button>
+          </div>
         </div>
       </header>
 
@@ -183,7 +189,7 @@ export default function Header() {
               About
             </Link>
             <Link
-              href="#contact"
+              href="/contact"
               className="text-navy hover:text-cyan transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
