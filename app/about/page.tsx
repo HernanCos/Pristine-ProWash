@@ -28,9 +28,9 @@ export default function AboutPage() {
 
       {/* Main Content - Enhanced with images */}
       <section className="py-20 bg-white">
-        <div className="container max-w-6xl mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left Column - Story with image */}
+        <div className="container max-w-4xl mx-auto px-4">
+          <div className="space-y-16">
+            {/* My Story Section */}
             <div className="space-y-8">
               <div>
                 <h2 className="text-2xl md:text-3xl font-semibold text-navy mb-6">My Story</h2>
@@ -51,26 +51,10 @@ export default function AboutPage() {
                   </p>
                 </div>
               </div>
-              <div className="relative h-64 rounded-lg overflow-hidden shadow-lg">
-                <Image
-                  src="/student-studying-finance-books-at-university-of-or.jpg"
-                  alt="Student life at University of Oregon"
-                  fill
-                  className="object-cover"
-                />
-              </div>
             </div>
 
-            {/* Right Column - Values with image */}
+            {/* What Drives Me Section */}
             <div className="space-y-8">
-              <div className="relative h-64 rounded-lg overflow-hidden shadow-lg">
-                <Image
-                  src="/pressure-washing-equipment-and-tools-professional-.jpg"
-                  alt="Professional pressure washing equipment"
-                  fill
-                  className="object-cover"
-                />
-              </div>
               <div>
                 <h2 className="text-2xl md:text-3xl font-semibold text-navy mb-6">What Drives Me</h2>
                 <div className="w-20 h-1 bg-cyan mb-8"></div>

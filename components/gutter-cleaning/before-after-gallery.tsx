@@ -10,16 +10,6 @@ const galleryPairs = [
     after: "/images/gutter-after.png",
     alt: "Gutter before and after cleaning",
   },
-  {
-    before: "/images/gutter-gallery/GutterBefore1.png",
-    after: "/images/gutter-gallery/GutterAfter1.png",
-    alt: "Dirty gutter exterior before and after cleaning",
-  },
-  {
-    before: "/images/gutter-gallery/GutterBefore2.png",
-    after: "/images/gutter-gallery/GutterAfter2.png",
-    alt: "Gutter clogged with debris before and after cleaning",
-  },
 ]
 
 export default function BeforeAfterGallery() {

@@ -11,24 +11,6 @@ const galleryPairs = [
     after: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/RoofAfter1-AekrG21zlgWPxykoNbA9EnyzF4sIhX.png",
     alt: "Roof transformation showing moss removal and shingle restoration",
   },
-  {
-    before:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/RoofBefore2.png-vQhX6SsvbdpQeM260jOgrLj3SdsDok.jpeg",
-    after: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/RoofAfter2.png-ftuHMYGOU5XFnDzlmcbFQ1b9t5usXi.jpeg",
-    alt: "Before and after roof soft washing showing dramatic improvement",
-  },
-  {
-    before:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/RoofBefore3.png-nKA6muJ53L4SlDTyy68qAwR3c3Cpr3.jpeg",
-    after: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/RoofAfter3.png-hp6GqTRxtG67VUVTtBRBxUCzIh4ctQ.jpeg",
-    alt: "Roof ridge cleaning before and after comparison",
-  },
-  {
-    before:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/RoofBefore4.png-kkGwLE684qBOZATIdXcyrdp2AKMI5O.jpeg",
-    after: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/RoofAfter4.png-H5Q7s7KxvxDjtYHRQDJJ9w5ClL2C3d.jpeg",
-    alt: "Complete roof transformation from severely moss-covered to pristine condition",
-  },
 ]
 
 export default function BeforeAfterGallery() {

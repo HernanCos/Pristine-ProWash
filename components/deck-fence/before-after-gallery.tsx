@@ -10,11 +10,6 @@ const galleryPairs = [
     after: "/images/deck-fence-gallery/DeckAfter1.png",
     alt: "Weathered deck before and after restoration",
   },
-  {
-    before: "/images/deck-fence-gallery/DeckBefore2.png",
-    after: "/images/deck-fence-gallery/DeckAfter2.png",
-    alt: "Dirty fence before and after cleaning",
-  },
 ]
 
 export default function BeforeAfterGallery() {

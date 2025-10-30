@@ -10,21 +10,6 @@ const galleryPairs = [
     after: "/images/driveway-after.jpg",
     alt: "Concrete driveway before and after cleaning",
   },
-  {
-    before: "/images/driveway-gallery/DrivewayBefore1.png",
-    after: "/images/driveway-gallery/DrivewayAfter1.png",
-    alt: "Dirty driveway with brick border before and after power washing",
-  },
-  {
-    before: "/images/driveway-gallery/DrivewayBefore2.png",
-    after: "/images/driveway-gallery/DrivewayAfter2.png",
-    alt: "Long residential driveway before and after professional cleaning",
-  },
-  {
-    before: "/images/driveway-gallery/DrivewayBefore3.jpg",
-    after: "/images/driveway-gallery/DrivewayAfter3.jpg",
-    alt: "Suburban home driveway before and after pressure washing",
-  },
 ]
 
 export default function BeforeAfterGallery() {

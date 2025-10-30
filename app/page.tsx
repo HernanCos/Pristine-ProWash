@@ -1,6 +1,5 @@
 import Hero from "@/components/hero"
 import TrustBar from "@/components/trust-bar"
-import Testimonials from "@/components/testimonials"
 import Services from "@/components/services"
 import Gallery from "@/components/gallery"
 import Benefits from "@/components/benefits"
@@ -14,7 +13,6 @@ export default function Home() {
     <main>
       <Hero />
       <TrustBar />
-      <Testimonials />
       <Services />
       <Gallery />
       <Benefits />

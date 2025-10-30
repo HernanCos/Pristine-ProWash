@@ -10,21 +10,6 @@ const galleryPairs = [
     after: "/images/house-gallery/HouseAfter1.png",
     alt: "Siding before and after soft washing",
   },
-  {
-    before: "/images/house-gallery/HouseBefore2.png",
-    after: "/images/house-gallery/HouseAfter2.png",
-    alt: "Two-story house before and after soft washing",
-  },
-  {
-    before: "/images/house-gallery/HouseBefore3.png",
-    after: "/images/house-gallery/HouseAfter3.png",
-    alt: "House exterior with bushes before and after cleaning",
-  },
-  {
-    before: "/images/house-gallery/HouseBefore4.png",
-    after: "/images/house-gallery/HouseAfter4.png",
-    alt: "Siding with window and shutters before and after soft washing",
-  },
 ]
 
 export default function BeforeAfterGallery() {

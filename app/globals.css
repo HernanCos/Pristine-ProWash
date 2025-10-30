@@ -57,6 +57,33 @@ div {
   }
 }
 
+/* Added custom utility classes for cyan and navy colors */
+@layer utilities {
+  .bg-cyan {
+    background-color: var(--cyan);
+  }
+
+  .text-cyan {
+    color: var(--cyan);
+  }
+
+  .bg-navy {
+    background-color: var(--navy);
+  }
+
+  .text-navy {
+    color: var(--navy);
+  }
+
+  .border-cyan {
+    border-color: var(--cyan);
+  }
+
+  .border-navy {
+    border-color: var(--navy);
+  }
+}
+
 .btn-primary {
   @apply bg-cyan text-white font-semibold py-3 px-6 rounded-md hover:brightness-110 transition;
 }
