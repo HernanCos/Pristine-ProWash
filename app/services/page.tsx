@@ -15,6 +15,9 @@ const services = [
     tagline: "Restore your home's curb appeal in one visit.",
     description:
       "Oregon's damp climate means algae, mildew, and green growth build up fast on siding. Our house wash service uses the right pressure and eco-friendly detergents for your specific siding type — vinyl, wood, stucco, or fiber cement — leaving it clean without causing damage.",
+    image: "/images/service-house-wash.jpg",
+    imageAlt: "House siding covered in algae and mildew before washing",
+    imageCaption: "Algae & mildew buildup on siding",
     includes: [
       "Full exterior wall wash from ground to roofline",
       "Soffit and fascia cleaning",
@@ -29,6 +32,9 @@ const services = [
     tagline: "Kill moss at the root — without damaging your shingles.",
     description:
       "High-pressure roof cleaning is dangerous and can void your shingle warranty. We use a professional low-pressure soft-wash system combined with a moss-killing treatment that eliminates algae and moss at the root. Results last longer, and your roof stays protected.",
+    image: "/images/service-roof-soft-wash.jpg",
+    imageAlt: "Roof shingles with heavy moss growth before soft wash",
+    imageCaption: "Moss growth across shingles",
     includes: [
       "Low-pressure soft-wash application",
       "Moss and algae treatment at the root",
@@ -43,6 +49,9 @@ const services = [
     tagline: "Strip years of staining, moss, and grime from hard surfaces.",
     description:
       "Concrete driveways, walkways, and patios accumulate oil, moss, tire marks, and deep-set staining over time. We use professional surface cleaning equipment that removes buildup evenly across the entire surface — no streaking, no missed spots.",
+    image: "/images/service-driveway.jpg",
+    imageAlt: "Driveway covered in moss and staining before pressure washing",
+    imageCaption: "Years of staining & moss on concrete",
     includes: [
       "Rotary surface cleaner for even, streak-free results",
       "Pre-treatment of oil stains and heavy buildup",
@@ -57,6 +66,9 @@ const services = [
     tagline: "Bring your deck back to life before sealing or staining.",
     description:
       "Wood and composite decks turn gray, slippery, and algae-covered without regular cleaning. We pressure wash decks at the correct pressure for the material, leaving the surface clean and ready for stain, sealant, or just summer use.",
+    image: "/images/service-deck.jpg",
+    imageAlt: "Weathered deck with algae and discoloration before cleaning",
+    imageCaption: "Weathered deck before restoration",
     includes: [
       "Wood and composite-safe pressure settings",
       "Algae, mildew, and stain removal",
@@ -71,6 +83,9 @@ const services = [
     tagline: "Remove green algae and discoloration from any fence material.",
     description:
       "Wood, vinyl, and chain-link fences all collect algae and weathering. A clean fence adds to your property's appearance and extends the life of the material. We match our method to your fence type so nothing gets damaged.",
+    image: null,
+    imageAlt: "",
+    imageCaption: "",
     includes: [
       "Wood, vinyl, and chain-link fences",
       "Algae, mildew, and discoloration removal",
@@ -133,9 +148,32 @@ export default function ServicesPage() {
               id={svc.id}
               className={`flex flex-col md:flex-row gap-8 items-start ${i % 2 !== 0 ? "md:flex-row-reverse" : ""}`}
             >
-              {/* Placeholder image block — swap for next/image when photos are ready */}
-              <div className="w-full md:w-2/5 shrink-0 bg-gray-100 rounded-2xl h-52 md:h-64 flex items-center justify-center text-gray-400 text-sm font-medium border border-dashed border-gray-300">
-                {svc.title} Photo
+              {/* Service image */}
+              <div className="w-full md:w-2/5 shrink-0">
+                {svc.image ? (
+                  <div className="rounded-2xl overflow-hidden shadow-sm border border-gray-200">
+                    <div className="relative h-52 md:h-64">
+                      <Image
+                        src={svc.image}
+                        alt={svc.imageAlt}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 40vw"
+                      />
+                      <span className="absolute bottom-2 left-2 bg-black/60 text-white text-xs font-semibold px-2.5 py-1 rounded-full">
+                        {svc.imageCaption}
+                      </span>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="rounded-2xl h-52 md:h-64 bg-gray-100 border border-dashed border-gray-300 flex flex-col items-center justify-center gap-2 text-gray-400">
+                    <svg className="w-8 h-8 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <span className="text-sm font-medium">Photo Coming Soon</span>
+                  </div>
+                )}
               </div>
 
               {/* Content */}
