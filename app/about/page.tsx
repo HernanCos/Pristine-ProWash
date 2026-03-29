@@ -72,7 +72,7 @@ export default function AboutPage() {
       <section className="bg-white py-16 md:py-20">
         <div className="max-w-5xl mx-auto px-4">
           <div className="flex flex-col md:flex-row gap-10 items-center">
-            <div className="relative w-full md:w-2/5 shrink-0 h-80 rounded-2xl overflow-hidden shadow-md">
+            <div className="relative w-full md:w-2/5 shrink-0 h-[28rem] rounded-2xl overflow-hidden shadow-md">
               <Image
                 src="/images/owner.jpg"
                 alt="Owner of Pristine ProWash"
@@ -100,27 +100,26 @@ export default function AboutPage() {
                   Licensed, insured, and 100% satisfaction guaranteed. That&apos;s the Pristine ProWash standard.
                 </p>
               </div>
-              <div className="mt-6 flex flex-col sm:flex-row gap-3">
+              <div className="mt-6 flex flex-wrap gap-3 items-center">
                 <Link href="/contact" className="bg-brand-blue hover:bg-brand-blue-dark text-white px-6 py-3 rounded-xl font-bold text-sm transition-colors text-center">
                   Get a Free Quote
                 </Link>
                 <a href="tel:+19712806104" className="border border-gray-300 hover:border-brand-blue text-brand-dark px-6 py-3 rounded-xl font-bold text-sm transition-colors text-center">
                   Call (971) 280-6104
                 </a>
-              </div>
-
-              {/* UO Badge */}
-              <div className="mt-6 inline-flex items-center gap-3 bg-gray-50 border border-gray-200 rounded-xl px-4 py-3">
-                <Image
-                  src="/images/uo-logo.png"
-                  alt="University of Oregon"
-                  width={36}
-                  height={36}
-                  className="object-contain"
-                />
-                <div>
-                  <p className="text-xs text-gray-500">Currently studying at</p>
-                  <p className="text-sm font-semibold text-brand-dark">University of Oregon</p>
+                {/* UO Badge */}
+                <div className="inline-flex items-center gap-3 bg-gray-50 border border-gray-200 rounded-xl px-4 py-3">
+                  <Image
+                    src="/images/uo-logo.png"
+                    alt="University of Oregon"
+                    width={36}
+                    height={36}
+                    className="object-contain"
+                  />
+                  <div>
+                    <p className="text-xs text-gray-500">Currently studying at</p>
+                    <p className="text-sm font-semibold text-brand-dark">University of Oregon</p>
+                  </div>
                 </div>
               </div>
             </div>
