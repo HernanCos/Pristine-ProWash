@@ -141,12 +141,12 @@ export default function ServicesPage() {
 
       {/* Service detail cards */}
       <section className="bg-white py-16 md:py-20">
-        <div className="max-w-5xl mx-auto px-4 space-y-12">
+        <div className="max-w-5xl mx-auto px-4 space-y-20">
           {services.map((svc, i) => (
             <div
               key={svc.id}
               id={svc.id}
-              className={`flex flex-col md:flex-row gap-8 items-start ${i % 2 !== 0 ? "md:flex-row-reverse" : ""}`}
+              className={`flex flex-col md:flex-row gap-10 items-center ${i % 2 !== 0 ? "md:flex-row-reverse" : ""}`}
             >
               {/* Service image */}
               <div className="w-full md:w-2/5 shrink-0">
