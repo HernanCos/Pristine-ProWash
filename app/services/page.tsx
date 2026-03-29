@@ -139,15 +139,15 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Service detail cards */}
-      <section className="bg-white py-16 md:py-20">
-        <div className="max-w-5xl mx-auto px-4 space-y-20">
-          {services.map((svc, i) => (
-            <div
-              key={svc.id}
-              id={svc.id}
-              className={`flex flex-col md:flex-row gap-10 items-center ${i % 2 !== 0 ? "md:flex-row-reverse" : ""}`}
-            >
+      {/* Service detail sections — alternating backgrounds */}
+      {services.map((svc, i) => (
+        <section
+          key={svc.id}
+          id={svc.id}
+          className={`${i % 2 === 0 ? "bg-white" : "bg-gray-50"} py-16 md:py-20`}
+        >
+          <div className="max-w-5xl mx-auto px-4">
+            <div className={`flex flex-col md:flex-row gap-10 items-center ${i % 2 !== 0 ? "md:flex-row-reverse" : ""}`}>
               {/* Service image */}
               <div className="w-full md:w-2/5 shrink-0">
                 {svc.image ? (
@@ -199,9 +199,9 @@ export default function ServicesPage() {
                 </Link>
               </div>
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        </section>
+      ))}
 
       {/* Bottom CTA */}
       <section className="bg-brand-blue text-white py-14">
