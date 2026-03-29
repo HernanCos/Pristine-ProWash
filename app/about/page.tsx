@@ -108,6 +108,21 @@ export default function AboutPage() {
                   Call (971) 280-6104
                 </a>
               </div>
+
+              {/* UO Badge */}
+              <div className="mt-6 inline-flex items-center gap-3 bg-gray-50 border border-gray-200 rounded-xl px-4 py-3">
+                <Image
+                  src="/images/uo-logo.png"
+                  alt="University of Oregon"
+                  width={36}
+                  height={36}
+                  className="object-contain"
+                />
+                <div>
+                  <p className="text-xs text-gray-500">Currently studying at</p>
+                  <p className="text-sm font-semibold text-brand-dark">University of Oregon</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
