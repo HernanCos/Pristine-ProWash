@@ -83,9 +83,9 @@ const services = [
     tagline: "Remove green algae and discoloration from any fence material.",
     description:
       "Wood, vinyl, and chain-link fences all collect algae and weathering. A clean fence adds to your property's appearance and extends the life of the material. We match our method to your fence type so nothing gets damaged.",
-    image: null,
-    imageAlt: "",
-    imageCaption: "",
+    image: "/images/service-fence.jpg",
+    imageAlt: "Fence covered in algae and discoloration before cleaning",
+    imageCaption: "Algae & discoloration on fence panels",
     includes: [
       "Wood, vinyl, and chain-link fences",
       "Algae, mildew, and discoloration removal",
