@@ -2,11 +2,11 @@ import Link from "next/link";
 import Image from "next/image";
 
 const services = [
-  { label: "House Wash", href: "/services#house-wash" },
-  { label: "Roof Soft Wash", href: "/services#roof-soft-wash" },
-  { label: "Driveway & Concrete", href: "/services#driveway-concrete" },
-  { label: "Deck Cleaning", href: "/services#deck" },
-  { label: "Fence Cleaning", href: "/services#fence" },
+  { label: "Roof Soft Wash", href: "/services/roof-soft-wash" },
+  { label: "House Wash", href: "/services/house-wash" },
+  { label: "Driveway & Concrete", href: "/services/driveway-concrete" },
+  { label: "Deck Cleaning", href: "/services/deck-cleaning" },
+  { label: "Fence Cleaning", href: "/services/fence-cleaning" },
 ];
 
 const quickLinks = [

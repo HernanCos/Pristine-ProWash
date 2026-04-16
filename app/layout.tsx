@@ -10,12 +10,13 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://pristineprowash.net"),
   title: {
     template: "%s | Pristine ProWash",
-    default: "Pristine ProWash — Professional Pressure Washing in Oregon",
+    default: "Professional Pressure Washing in Oregon | Pristine ProWash",
   },
   description:
-    "Licensed & insured pressure washing serving all of Oregon. House wash, roof soft wash, driveway, deck, and fence cleaning. 100% satisfaction guaranteed. Call (971) 280-6104.",
+    "Licensed & insured pressure washing serving all of Oregon. Roof soft wash, house wash, driveway cleaning, deck and fence restoration. 100% satisfaction guarantee. Call (971) 280-6104.",
   keywords: [
     "pressure washing Oregon",
     "house washing Oregon",
@@ -26,41 +27,56 @@ export const metadata: Metadata = {
     "Pristine ProWash",
   ],
   openGraph: {
-    title: "Pristine ProWash — Professional Pressure Washing in Oregon",
+    title: "Professional Pressure Washing in Oregon | Pristine ProWash",
     description:
       "Licensed & insured pressure washing serving all of Oregon. 100% satisfaction guaranteed.",
     url: "https://pristineprowash.net",
     siteName: "Pristine ProWash",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/logo.jpg",
+        alt: "Pristine ProWash logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "Professional Pressure Washing in Oregon | Pristine ProWash",
+    description:
+      "Licensed & insured pressure washing serving all of Oregon. 100% satisfaction guaranteed.",
+    images: ["/logo.jpg"],
   },
 };
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "HomeAndConstructionBusiness",
   name: "Pristine ProWash",
   description:
-    "Licensed and insured professional pressure washing serving all of Oregon. House wash, roof soft wash, driveway, deck, and fence cleaning.",
+    "Professional pressure washing and soft-wash services serving all of Oregon. Licensed and insured.",
   url: "https://pristineprowash.net",
-  telephone: "+19712806104",
+  telephone: "(971) 280-6104",
   email: "info@pristineprowash.net",
-  areaServed: {
-    "@type": "State",
-    name: "Oregon",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Portland",
+    addressRegion: "OR",
+    addressCountry: "US",
   },
-  serviceType: [
-    "House Washing",
-    "Roof Soft Wash",
-    "Driveway Cleaning",
-    "Concrete Cleaning",
-    "Deck Cleaning",
-    "Fence Cleaning",
-  ],
+  areaServed: [{ "@type": "State", name: "Oregon" }],
   priceRange: "$$",
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Pressure Washing Services",
+    itemListElement: [
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Roof Soft Wash" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "House Wash" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Driveway & Concrete Cleaning" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Deck Cleaning" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Fence Cleaning" } },
+    ],
   },
 };
 

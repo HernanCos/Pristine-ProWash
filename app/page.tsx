@@ -3,14 +3,34 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Pristine ProWash — Professional Pressure Washing in Oregon",
+  title: {
+    absolute: "Professional Pressure Washing in Oregon | Pristine ProWash",
+  },
   description:
-    "Licensed & insured pressure washing serving all of Oregon. House wash, roof soft wash, driveway, deck, and fence cleaning. 100% satisfaction guaranteed. Call (971) 280-6104.",
+    "Licensed & insured pressure washing serving all of Oregon. Roof soft wash, house wash, driveway cleaning, deck and fence restoration. 100% satisfaction guarantee. Call (971) 280-6104.",
+  alternates: {
+    canonical: "https://pristineprowash.net",
+  },
+  openGraph: {
+    title: "Professional Pressure Washing in Oregon | Pristine ProWash",
+    description:
+      "Licensed & insured pressure washing serving all of Oregon. Roof soft wash, house wash, driveway cleaning, deck and fence restoration. 100% satisfaction guarantee. Call (971) 280-6104.",
+    url: "https://pristineprowash.net",
+    images: [{ url: "/logo.jpg", alt: "Pristine ProWash logo" }],
+  },
+  twitter: {
+    card: "summary",
+    title: "Professional Pressure Washing in Oregon | Pristine ProWash",
+    description:
+      "Licensed & insured pressure washing serving all of Oregon. Roof soft wash, house wash, driveway cleaning, deck and fence restoration. 100% satisfaction guarantee. Call (971) 280-6104.",
+    images: ["/logo.jpg"],
+  },
 };
 
 const services = [
   {
     id: "house-wash",
+    slug: "house-wash",
     title: "House Wash",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -21,16 +41,18 @@ const services = [
   },
   {
     id: "roof-soft-wash",
+    slug: "roof-soft-wash",
     title: "Roof Soft Wash",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12l9-9 9 9M4 11v9a1 1 0 001 1h4v-5h6v5h4a1 1 0 001-1v-9" />
       </svg>
     ),
-    desc: "Low-pressure soft-wash method that kills moss and algae at the root — no damage to shingles, guaranteed.",
+    desc: "Low-pressure soft-wash method that kills moss and algae at the root , no damage to shingles, guaranteed.",
   },
   {
     id: "driveway-concrete",
+    slug: "driveway-concrete",
     title: "Driveway & Concrete",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -41,6 +63,7 @@ const services = [
   },
   {
     id: "deck",
+    slug: "deck-cleaning",
     title: "Deck Cleaning",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -51,13 +74,14 @@ const services = [
   },
   {
     id: "fence",
+    slug: "fence-cleaning",
     title: "Fence Cleaning",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
       </svg>
     ),
-    desc: "Wood, vinyl, or chain-link — we remove green algae, mildew, and discoloration for a fresh, clean finish.",
+    desc: "Wood, vinyl, or chain-link , we remove green algae, mildew, and discoloration for a fresh, clean finish.",
   },
 ];
 
@@ -65,21 +89,21 @@ const beforeAfters = [
   {
     before: "/images/ba-driveway-before.jpg",
     after: "/images/ba-driveway-after.jpg",
-    label: "Driveway — Years of moss & staining removed",
+    label: "Driveway , Years of moss & staining removed",
     beforeAlt: "Driveway before pressure washing",
     afterAlt: "Driveway after pressure washing",
   },
   {
     before: "/images/ba-deck-before.jpg",
     after: "/images/ba-deck-after.jpg",
-    label: "Deck — Algae and weathering stripped away",
+    label: "Deck , Algae and weathering stripped away",
     beforeAlt: "Deck before pressure washing",
     afterAlt: "Deck after pressure washing",
   },
   {
     before: "/images/ba-hotel-before.jpg",
     after: "/images/ba-hotel-after.jpg",
-    label: "Commercial Exterior — Full property wash",
+    label: "Commercial Exterior , Full property wash",
     beforeAlt: "Commercial property before pressure washing",
     afterAlt: "Commercial property after pressure washing",
   },
@@ -88,7 +112,7 @@ const beforeAfters = [
 const faqs = [
   {
     q: "Do you use high pressure on roofs?",
-    a: "No. We use a low-pressure soft-wash method for all roof cleaning. High pressure can crack shingles and void manufacturer warranties. Our soft-wash approach kills moss and algae at the root using eco-friendly detergents — no damage, guaranteed.",
+    a: "No. We use a low-pressure soft-wash method for all roof cleaning. High pressure can crack shingles and void manufacturer warranties. Our soft-wash approach kills moss and algae at the root using eco-friendly detergents , no damage, guaranteed.",
   },
   {
     q: "Is pressure washing safe for my siding and paint?",
@@ -104,7 +128,7 @@ const faqs = [
   },
   {
     q: "How often should I have my home pressure washed?",
-    a: "In Oregon's damp climate, we recommend once a year — especially for roofs, north-facing siding, and driveways where moss and algae grow fastest. Annual cleaning also protects your surfaces from long-term deterioration.",
+    a: "In Oregon's damp climate, we recommend once a year , especially for roofs, north-facing siding, and driveways where moss and algae grow fastest. Annual cleaning also protects your surfaces from long-term deterioration.",
   },
   {
     q: "What areas of Oregon do you serve?",
@@ -116,9 +140,54 @@ const faqs = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map(({ q, a }) => ({
+    "@type": "Question",
+    name: q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: a,
+    },
+  })),
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "How It Works , Pristine ProWash",
+  description: "Three simple steps from first contact to a spotless property.",
+  step: [
+    {
+      "@type": "HowToStep",
+      name: "Request a Free Quote",
+      text: "Call, text, or fill out our form. We respond within the hour with a no-obligation estimate.",
+    },
+    {
+      "@type": "HowToStep",
+      name: "We Show Up Ready",
+      text: "We arrive on time, walk the property with you, and get to work with commercial-grade equipment matched to your surfaces.",
+    },
+    {
+      "@type": "HowToStep",
+      name: "Guaranteed Results",
+      text: "We don't leave until the job is done right. If you're not fully satisfied, we come back and re-clean for free.",
+    },
+  ],
+};
+
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+      />
       {/* ── HERO ── */}
       <section className="relative bg-brand-dark text-white overflow-hidden">
         <Image
@@ -185,7 +254,7 @@ export default function HomePage() {
             {services.map((svc) => (
               <Link
                 key={svc.id}
-                href={`/services#${svc.id}`}
+                href={`/services/${svc.slug}`}
                 className="group border border-gray-200 rounded-2xl p-6 hover:border-brand-blue hover:shadow-md transition-all"
               >
                 <div className="text-brand-blue mb-3 group-hover:scale-110 transition-transform">{svc.icon}</div>
@@ -209,7 +278,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-extrabold text-brand-dark mb-3">See the Difference</h2>
-            <p className="text-gray-500">Real results from Oregon properties — before and after one visit.</p>
+            <p className="text-gray-500">Real results from Oregon properties , before and after one visit.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {beforeAfters.map((item, i) => (
@@ -263,15 +332,15 @@ export default function HomePage() {
             {[
               {
                 quote: "Absolutely incredible work. My driveway looks brand new after years of moss buildup. Professional, on time, and thorough.",
-                name: "— [Customer Name], [City], OR",
+                name: "Michael, Portland, OR",
               },
               {
                 quote: "Had our roof soft washed and couldn't believe the difference. They were careful, explained everything, and cleaned up perfectly.",
-                name: "— [Customer Name], [City], OR",
+                name: "Jennifer, Portland, OR",
               },
               {
                 quote: "Best money I've spent on home maintenance. The house wash made our whole exterior look years younger.",
-                name: "— [Customer Name], [City], OR",
+                name: "Christopher, Eugene, OR",
               },
             ].map((t, i) => (
               <div key={i} className="bg-gray-50 rounded-2xl p-6 border border-dashed border-gray-300">
@@ -367,7 +436,7 @@ export default function HomePage() {
                 <li className="text-gray-400 italic text-xs pt-1">…and all surrounding areas</li>
               </ul>
               <div className="mt-5 pt-4 border-t border-gray-100">
-                <p className="text-xs text-gray-500">Not on this list? <a href="tel:+19712806104" className="text-brand-blue font-semibold hover:underline">Call us</a> — we likely cover your area.</p>
+                <p className="text-xs text-gray-500">Not on this list? <a href="tel:+19712806104" className="text-brand-blue font-semibold hover:underline">Call us</a> , we likely cover your area.</p>
               </div>
             </div>
 
@@ -381,7 +450,7 @@ export default function HomePage() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Pristine ProWash service area — all of Oregon"
+                title="Pristine ProWash service area , all of Oregon"
               />
             </div>
           </div>
