@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { trackQuoteFormSubmit } from "@/lib/gtag";
 
 const FORMSPREE_ID = "xnjopbvb";
 
@@ -23,6 +24,7 @@ export default function ContactForm() {
       if (res.ok) {
         setStatus("success");
         form.reset();
+        trackQuoteFormSubmit();
       } else {
         setStatus("error");
       }
